@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -60,7 +60,7 @@ binpack/epsilon.onboarding.internal.bin.sha256
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -133,11 +133,11 @@ CXX     apps/calculation/additional_outputs/trigonometry_graph_cell.o
 CXX     apps/calculation/additional_outputs/trigonometry_list_controller.o
 CXX     apps/calculation/additional_outputs/trigonometry_model.o
 CXX     apps/calculation/additional_outputs/unit_list_controller.o
+CXX     apps/calculation/calculation_icon.o
 apps/calculation/additional_outputs/second_degree_list_controller.cpp: In member function 'virtual void Calculation::SecondDegreeListController::setExpression(Poincare::Expression)':
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:41:7: warning: unused variable 'degree' [-Wunused-variable]
    41 |   int degree = m_expression.getPolynomialReducedCoefficients(
       |       ^~~~~~
-CXX     apps/calculation/calculation_icon.o
 apps/calculation/additional_outputs/second_degree_list_controller.cpp: In member function 'Poincare::Expression Calculation::SecondDegreeListController::getOppositeIfExists(Poincare::Expression, Poincare::ExpressionNode::ReductionContext*)':
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:274:21: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
   274 |     return std::move(e.childAtIndex(0).clone());
@@ -264,8 +264,8 @@ CXX     apps/probability/images/calcul4_icon.o
 CXX     apps/probability/images/focused_calcul1_icon.o
 CXX     apps/probability/images/focused_calcul2_icon.o
 CXX     apps/probability/images/focused_calcul3_icon.o
-CXX     apps/probability/cell.o
 CXX     apps/probability/images/focused_calcul4_icon.o
+CXX     apps/probability/cell.o
 CXX     apps/probability/distribution/binomial_distribution.o
 CXX     apps/probability/distribution/chi_squared_distribution.o
 CXX     apps/probability/distribution/distribution.o
@@ -335,6 +335,7 @@ CXX     apps/rpn/rpn_stack.o
 CXX     apps/rpn/rpn_stack_controller.o
 CXX     apps/rpn/rpn_toolbox.o
 CXX     apps/sequence/sequence_icon.o
+CXX     apps/sequence/graph/curve_parameter_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/../shared/text_field_delegate.h:4,
@@ -348,9 +349,7 @@ In file included from apps/rpn/app.h:11,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/curve_parameter_controller.o
 CXX     apps/sequence/graph/curve_view_range.o
-CXX     apps/sequence/graph/go_to_parameter_controller.o
 In file included from apps/rpn/rpn_toolbox.h:6,
                  from apps/rpn/rpn_toolbox.cpp:1:
 ./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
@@ -359,6 +358,7 @@ In file included from apps/rpn/rpn_toolbox.h:6,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/sequence/graph/go_to_parameter_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/app.h:6,
@@ -433,8 +433,8 @@ CXX     apps/shared/continuous_function_cache.o
 CXX     apps/shared/cursor_view.o
 CXX     apps/shared/curve_view.o
 CXX     apps/shared/curve_view_cursor.o
-CXX     apps/shared/curve_view_range.o
 CXX     apps/shared/discard_pop_up_controller.o
+CXX     apps/shared/curve_view_range.o
 CXX     apps/shared/dots.o
 CXX     apps/shared/double_pair_store.o
 CXX     apps/shared/editable_cell_table_view_controller.o
@@ -469,8 +469,8 @@ CXX     apps/shared/input_event_handler_delegate_app.o
 CXX     apps/shared/interactive_curve_view_controller.o
 CXX     apps/shared/interactive_curve_view_range.o
 CXX     apps/shared/interactive_curve_view_range_delegate.o
-CXX     apps/shared/interval.o
 CXX     apps/shared/interval_parameter_controller.o
+CXX     apps/shared/interval.o
 CXX     apps/shared/labeled_curve_view.o
 CXX     apps/shared/layout_field_delegate.o
 CXX     apps/shared/list_parameter_controller.o
@@ -483,12 +483,12 @@ CXX     apps/shared/post_and_hardware_tests.o
 CXX     apps/shared/range_1D.o
 CXX     apps/shared/range_parameter_controller.o
 CXX     apps/shared/regular_table_view_data_source.o
-CXX     apps/shared/round_cursor_view.o
-CXX     apps/shared/scrollable_multiple_expressions_view.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CXX     apps/shared/round_cursor_view.o
+CXX     apps/shared/scrollable_multiple_expressions_view.o
 CXX     apps/shared/scrollable_two_expressions_cell.o
 CXX     apps/shared/separable.o
 CXX     apps/shared/separator_even_odd_buffer_text_cell.o
@@ -583,8 +583,8 @@ CXX     escher/src/gauge_view.o
 CXX     escher/src/highlight_cell.o
 CXX     escher/src/icon_view.o
 CXX     escher/src/image_view.o
-CXX     escher/src/input_event_handler.o
 CXX     escher/src/input_view_controller.o
+CXX     escher/src/input_event_handler.o
 CXX     escher/src/invocation.o
 CXX     escher/src/key_view.o
 CXX     escher/src/layout_field.o
@@ -638,11 +638,11 @@ CXX     escher/src/text_input_helpers.o
 CXX     escher/src/text_view.o
 CXX     escher/src/tiled_view.o
 CXX     escher/src/timer.o
-CXX     escher/src/toggleable_dot_view.o
 escher/src/timer.cpp: In member function 'void Timer::reset(uint32_t)':
 escher/src/timer.cpp:20:16: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'unsigned int'} and 'int' [-Wsign-compare]
    20 |   if(NewPeriod != -1){
       |      ~~~~~~~~~~^~~~~
+CXX     escher/src/toggleable_dot_view.o
 CXX     escher/src/toggleable_view.o
 CXX     escher/src/toolbox.o
 CXX     escher/src/transparent_view.o
@@ -679,9 +679,9 @@ ion/src/device/shared/drivers/bldata.cpp:16:9: warning: 'this_4(D)->m_header' is
       |         ^~~~~~~~
 CXX     ion/src/device/shared/drivers/clipboard.o
 CXX     ion/src/device/shared/drivers/console_dummy.o
-CXX     ion/src/device/shared/drivers/display.o
 CXX     ion/src/device/shared/drivers/crc32.o
 CXX     ion/src/device/shared/drivers/events_keyboard_platform.o
+CXX     ion/src/device/shared/drivers/display.o
 CXX     ion/src/device/shared/drivers/exam_mode.o
 CXX     ion/src/device/shared/drivers/flash.o
 CXX     ion/src/device/shared/drivers/internal_flash.o
@@ -707,8 +707,8 @@ CXX     ion/src/device/shared/usb/stack/descriptor/bos_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/configuration_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/device_capability_descriptor.o
-CXX     ion/src/device/shared/usb/stack/descriptor/dfu_functional_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/device_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/dfu_functional_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/extended_compat_id_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/interface_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/language_id_string_descriptor.o
@@ -737,8 +737,8 @@ CXX     ion/src/shared/console_line.o
 CXX     ion/src/shared/crc32_eat_byte.o
 CXX     ion/src/shared/decompress.o
 CXX     ion/src/shared/events.o
-CXX     ion/src/shared/events_keyboard.o
 CXX     ion/src/shared/events_modifier.o
+CXX     ion/src/shared/events_keyboard.o
 CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
 CXX     ion/src/shared/rtc.o
@@ -749,8 +749,8 @@ ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wu
 CXX     ion/src/shared/stack_position.o
 CXX     ion/src/shared/storage.o
 CXX     ion/src/shared/unicode/utf8_decoder.o
-CXX     ion/src/shared/unicode/utf8_helper.o
 CXX     kandinsky/fonts/ItalicLargeFontExtended.o
+CXX     ion/src/shared/unicode/utf8_helper.o
 CXX     kandinsky/fonts/ItalicSmallFontExtended.o
 CXX     kandinsky/fonts/LargeFontExtended.o
 CXX     kandinsky/fonts/SmallFontExtended.o
@@ -776,8 +776,8 @@ CC      liba/src/aeabi-rt/atexit.o
 AS      liba/src/armv7m/longjmp.o
 AS      liba/src/armv7m/setjmp.o
 CC      liba/src/bzero.o
-CC      liba/src/ctype.o
 CC      liba/src/errno.o
+CC      liba/src/ctype.o
 CC      liba/src/external/openbsd/b_exp__D.o
 CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/b_tgamma.o
@@ -860,8 +860,8 @@ CC      liba/src/external/openbsd/s_scalbn.o
 CC      liba/src/external/openbsd/s_scalbnf.o
 CC      liba/src/external/openbsd/s_signgam.o
 CC      liba/src/external/openbsd/s_sin.o
-CC      liba/src/external/openbsd/s_tan.o
 CC      liba/src/external/openbsd/s_sinf.o
+CC      liba/src/external/openbsd/s_tan.o
 CC      liba/src/external/openbsd/s_tanf.o
 CC      liba/src/external/openbsd/s_tanh.o
 CC      liba/src/external/openbsd/s_tanhf.o
@@ -888,8 +888,8 @@ CXX     libaxx/src/new.o
 CXX     poincare/src/absolute_value.o
 CXX     poincare/src/addition.o
 CXX     poincare/src/approximation_helper.o
-CXX     poincare/src/arc_sine.o
 CXX     poincare/src/arc_cosine.o
+CXX     poincare/src/arc_sine.o
 CXX     poincare/src/arc_tangent.o
 CXX     poincare/src/arithmetic.o
 CXX     poincare/src/based_integer.o
@@ -943,8 +943,8 @@ CXX     poincare/src/hyperbolic_arc_sine.o
 CXX     poincare/src/hyperbolic_arc_tangent.o
 CXX     poincare/src/hyperbolic_cosine.o
 CXX     poincare/src/hyperbolic_sine.o
-CXX     poincare/src/hyperbolic_tangent.o
 CXX     poincare/src/hyperbolic_trigonometric_function.o
+CXX     poincare/src/hyperbolic_tangent.o
 CXX     poincare/src/imaginary_part.o
 CXX     poincare/src/infinity.o
 CXX     poincare/src/init.o
@@ -1047,13 +1047,13 @@ CXX     python/port/mod/ion/modion_table.o
 CXX     python/port/mod/kandinsky/modkandinsky.o
 CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
-CC      python/port/mod/matplotlib/modmatplotlib_table.o
-CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
-CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
+CC      python/port/mod/matplotlib/modmatplotlib_table.o
+CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
+CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
@@ -1129,8 +1129,8 @@ CC      python/src/py/nlraarch64.o
 CC      python/src/py/nlrpowerpc.o
 CC      python/src/py/nlrsetjmp.o
 CC      python/src/py/nlrthumb.o
-CC      python/src/py/nlrx86.o
 CC      python/src/py/nlrx64.o
+CC      python/src/py/nlrx86.o
 CC      python/src/py/nlrxtensa.o
 CC      python/src/py/obj.o
 CC      python/src/py/objarray.o
@@ -1151,16 +1151,16 @@ CC      python/src/py/objgenerator.o
 CC      python/src/py/objgetitemiter.o
 CC      python/src/py/objint.o
 CC      python/src/py/objint_longlong.o
-CC      python/src/py/objlist.o
 CC      python/src/py/objint_mpz.o
+CC      python/src/py/objlist.o
 CC      python/src/py/objmap.o
 CC      python/src/py/objmodule.o
 CC      python/src/py/objnamedtuple.o
 CC      python/src/py/objnone.o
 CC      python/src/py/objobject.o
 CC      python/src/py/objpolyiter.o
-CC      python/src/py/objrange.o
 CC      python/src/py/objproperty.o
+CC      python/src/py/objrange.o
 CC      python/src/py/objreversed.o
 CC      python/src/py/objset.o
 CC      python/src/py/objsingleton.o
@@ -1186,8 +1186,8 @@ CC      python/src/py/ringbuf.o
 CC      python/src/py/runtime.o
 CC      python/src/py/runtime_utils.o
 CC      python/src/py/scheduler.o
-CC      python/src/py/sequence.o
 CC      python/src/py/scope.o
+CC      python/src/py/sequence.o
 CC      python/src/py/showbc.o
 CC      python/src/py/smallint.o
 CC      python/src/py/stream.o

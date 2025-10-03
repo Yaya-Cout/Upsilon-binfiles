@@ -1,4 +1,4 @@
-Compilation start: Wed Oct 1 10:31:21 PM CEST 2025
+Compilation start: Sat Sep 20 03:15:26 PM CEST 2025
 [91m[36m         __  __      ______ ____   ____   _____
 [91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
 [91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
@@ -8,13 +8,13 @@ Compilation start: Wed Oct 1 10:31:21 PM CEST 2025
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks 
 [32m    Building on Linux amd64
 [0m[39m
 CXX     ion/src/device/bootloader/drivers/external_flash.o
-I18N    apps/i18n.cpp
 APPS_LAYOUTapps/home/apps_layout.cpp
+I18N    apps/i18n.cpp
 QSTRDAT python/port/genhdr/qstrdefs.generated.h
 THEME   escher/palette.h
 HOSTCC  escher/image/inliner
@@ -28,11 +28,11 @@ ICON    apps/exam_icon.png
 ICON    apps/external/external_icon.png
 ICON    apps/graph/graph_icon.png
 ICON    apps/on_boarding/logo_icon.png
-ICON    apps/probability/probability_icon.png
  (!!)   Icon apps/atomic_icon.png not found in icon theme miami_vice. Using default!
+ICON    apps/probability/probability_icon.png
 ICON    apps/probability/images/calcul1_icon.png
-ICON    apps/probability/images/calcul3_icon.png
 ICON    apps/probability/images/calcul2_icon.png
+ICON    apps/probability/images/calcul3_icon.png
 ICON    apps/probability/images/calcul4_icon.png
 ICON    apps/probability/images/focused_calcul1_icon.png
 ICON    apps/probability/images/focused_calcul2_icon.png
@@ -105,18 +105,19 @@ INLINER apps/probability/images/student_icon.cpp
 INLINER apps/probability/images/uniform_icon.cpp
 INLINER apps/reader/reader_icon.cpp
 INLINER apps/regression/regression_icon.cpp
+INLINER apps/rpn/rpn_icon.cpp
 CXX     ion/src/device/bootloader/drivers/board.o
 CXX     ion/src/device/bootloader/drivers/cache.o
 CXX     ion/src/device/bootloader/drivers/reset.o
 CXX     ion/src/device/bootloader/drivers/usb.o
 CXX     ion/src/device/shared/drivers/backlight.o
-CXX     ion/src/device/shared/drivers/base64.o
 CXX     ion/src/device/shared/drivers/battery.o
- (!!)   Icon bootloader/computer.png not found in icon theme miami_vice. Using default!
+CXX     ion/src/device/shared/drivers/base64.o
 CXX     ion/src/device/shared/drivers/board.o
 CXX     ion/src/device/shared/drivers/console_uart.o
 CXX     ion/src/device/shared/drivers/crc32.o
 CXX     ion/src/device/shared/drivers/display.o
+ (!!)   Icon bootloader/computer.png not found in icon theme miami_vice. Using default!
 CXX     ion/src/device/shared/drivers/events_keyboard_platform.o
 CXX     ion/src/device/shared/drivers/flash.o
 CXX     ion/src/device/shared/drivers/internal_flash.o
@@ -145,8 +146,8 @@ CXX     ion/src/device/shared/usb/stack/descriptor/language_id_string_descriptor
 CXX     ion/src/device/shared/usb/stack/descriptor/microsoft_os_string_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/platform_device_capability_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/string_descriptor.o
-CXX     ion/src/device/shared/usb/stack/descriptor/url_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/webusb_platform_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/url_descriptor.o
 CXX     ion/src/device/shared/usb/stack/device.o
 CXX     ion/src/device/shared/usb/stack/endpoint0.o
 CXX     ion/src/device/shared/usb/stack/interface.o
@@ -331,8 +332,8 @@ CXX     apps/graph/values/abscissa_title_cell.o
 CXX     apps/graph/values/derivative_parameter_controller.o
 CXX     apps/graph/values/function_parameter_controller.o
 CXX     apps/graph/values/interval_parameter_selector_controller.o
-CXX     apps/graph/values/values_controller.o
 CXX     apps/hardware_test/app.o
+CXX     apps/graph/values/values_controller.o
 CXX     apps/hardware_test/arrow_view.o
 CXX     apps/hardware_test/battery_test_controller.o
 CXX     apps/hardware_test/code_128b_view.o
@@ -365,7 +366,6 @@ CXX     apps/on_boarding/logo_controller.o
 CXX     apps/on_boarding/logo_icon.o
 CXX     apps/on_boarding/power_on_self_test.o
 CXX     apps/on_boarding/prompt_controller.o
-CXX     apps/probability/probability_icon.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -380,6 +380,7 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/probability/probability_icon.o
 CXX     apps/probability/calculation/calculation.o
 CXX     apps/probability/calculation/discrete_calculation.o
 CXX     apps/probability/calculation/finite_integral_calculation.o
@@ -437,8 +438,8 @@ CXX     apps/probability/images/focused_poisson_icon.o
 CXX     apps/probability/images/focused_student_icon.o
 CXX     apps/probability/images/focused_uniform_icon.o
 CXX     apps/probability/images/geometric_icon.o
-CXX     apps/probability/images/normal_icon.o
 CXX     apps/probability/images/poisson_icon.o
+CXX     apps/probability/images/normal_icon.o
 CXX     apps/probability/images/student_icon.o
 CXX     apps/probability/images/uniform_icon.o
 CXX     apps/probability/distribution_curve_view.o
@@ -519,9 +520,8 @@ CXX     apps/regression/regression_controller.o
 CXX     apps/regression/store.o
 CXX     apps/regression/store_controller.o
 CXX     apps/regression/store_parameter_controller.o
-INLINER apps/rpn/rpn_icon.cpp
-CXX     apps/rpn/rpn_content_view.o
 CXX     apps/rpn/rpn_icon.o
+CXX     apps/rpn/rpn_content_view.o
 CXX     apps/rpn/rpn_input_controller.o
 CXX     apps/rpn/rpn_stack.o
 CXX     apps/rpn/rpn_stack_controller.o
@@ -541,16 +541,6 @@ In file included from apps/rpn/app.h:11,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/curve_view_range.o
-In file included from apps/rpn/rpn_toolbox.h:6,
-                 from apps/rpn/rpn_toolbox.cpp:1:
-./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
-   12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
-      |        ^~~~~~~~~~
-apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
-   17 |   bool selectLeaf(int selectedRow);
-      |        ^~~~~~~~~~
-CXX     apps/sequence/graph/go_to_parameter_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/app.h:6,
@@ -562,6 +552,16 @@ In file included from apps/rpn/app.h:11:
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+In file included from apps/rpn/rpn_toolbox.h:6,
+                 from apps/rpn/rpn_toolbox.cpp:1:
+./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
+   12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
+      |        ^~~~~~~~~~
+apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
+   17 |   bool selectLeaf(int selectedRow);
+      |        ^~~~~~~~~~
+CXX     apps/sequence/graph/curve_view_range.o
+CXX     apps/sequence/graph/go_to_parameter_controller.o
 CXX     apps/sequence/graph/graph_controller.o
 CXX     apps/sequence/graph/graph_view.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(Poincare::ExpressionNode::Type, Poincare::Context*)':
@@ -597,11 +597,11 @@ CXX     apps/settings/sub_menu/about_controller_non_official.o
 CXX     apps/settings/sub_menu/accessibility_controller.o
 CXX     apps/settings/sub_menu/brightness_controller.o
 CXX     apps/settings/sub_menu/code_options_controller.o
-CXX     apps/settings/sub_menu/contributors_controller.o
 apps/settings/sub_menu/about_controller_non_official.cpp: In member function 'virtual void Settings::AboutController::viewWillAppear()':
 apps/settings/sub_menu/about_controller_non_official.cpp:10:17: warning: unused variable 'cautionMessages' [-Wunused-variable]
    10 |   I18n::Message cautionMessages[] = {I18n::Message::AboutWarning1, I18n::Message::AboutWarning2, I18n::Message::AboutWarning3, I18n::Message::AboutWarning4};
       |                 ^~~~~~~~~~~~~~~
+CXX     apps/settings/sub_menu/contributors_controller.o
 CXX     apps/settings/sub_menu/datetime_controller.o
 CXX     apps/settings/sub_menu/display_mode_controller.o
 CXX     apps/settings/sub_menu/exam_mode_controller.o
@@ -610,11 +610,11 @@ CXX     apps/settings/sub_menu/external_controller.o
 CXX     apps/settings/sub_menu/generic_sub_controller.o
 CXX     apps/settings/sub_menu/localization_controller.o
 CXX     apps/settings/sub_menu/math_options_controller.o
-CXX     apps/settings/sub_menu/preferences_controller.o
 apps/settings/sub_menu/exam_mode_controller.cpp: In member function 'virtual void Settings::ExamModeController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/settings/sub_menu/exam_mode_controller.cpp:86:17: warning: unused variable 'preferences' [-Wunused-variable]
    86 |   Preferences * preferences = Preferences::sharedPreferences();
       |                 ^~~~~~~~~~~
+CXX     apps/settings/sub_menu/preferences_controller.o
 CXX     apps/settings/sub_menu/selectable_view_with_messages.o
 CXX     apps/shared/banner_view.o
 CXX     apps/shared/buffer_function_title_cell.o
@@ -661,8 +661,8 @@ CXX     apps/shared/hideable_even_odd_cell.o
 CXX     apps/shared/hideable_even_odd_editable_text_cell.o
 CXX     apps/shared/input_event_handler_delegate_app.o
 CXX     apps/shared/interactive_curve_view_controller.o
-CXX     apps/shared/interactive_curve_view_range.o
 CXX     apps/shared/interactive_curve_view_range_delegate.o
+CXX     apps/shared/interactive_curve_view_range.o
 CXX     apps/shared/interval.o
 CXX     apps/shared/interval_parameter_controller.o
 CXX     apps/shared/labeled_curve_view.o
@@ -676,11 +676,11 @@ CXX     apps/shared/parameter_text_field_delegate.o
 CXX     apps/shared/post_and_hardware_tests.o
 CXX     apps/shared/range_1D.o
 CXX     apps/shared/range_parameter_controller.o
-CXX     apps/shared/regular_table_view_data_source.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CXX     apps/shared/regular_table_view_data_source.o
 CXX     apps/shared/round_cursor_view.o
 CXX     apps/shared/scrollable_multiple_expressions_view.o
 CXX     apps/shared/scrollable_two_expressions_cell.o
@@ -852,9 +852,9 @@ CXX     ion/src/device/bootloader/drivers/led.o
 CXX     ion/src/device/bootloader/drivers/power.o
 CXX     ion/src/device/bootloader/drivers/storage.o
 CXX     ion/src/device/bootloader/drivers/trampoline.o
+CC      ion/src/device/shared/boot/isr.o
 CXX     ion/src/device/bootloader/platform_info.o
 CXX     ion/src/device/shared/drivers/bldata.o
-CC      ion/src/device/shared/boot/isr.o
 CXX     ion/src/device/shared/drivers/clipboard.o
 <command-line>: warning: "EPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
@@ -888,13 +888,13 @@ CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B3/layout_events.o
 CXX     ion/src/shared/rtc.o
 CXX     ion/src/shared/stack_position.o
-CXX     ion/src/shared/storage.o
-CXX     ion/src/shared/unicode/utf8_decoder.o
-CXX     ion/src/shared/unicode/utf8_helper.o
 ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
 ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
   231 |     const char * name = fullNameOfRecordStarting(p);
       |                  ^~~~
+CXX     ion/src/shared/storage.o
+CXX     ion/src/shared/unicode/utf8_decoder.o
+CXX     ion/src/shared/unicode/utf8_helper.o
 CXX     kandinsky/fonts/ItalicLargeFontExtended.o
 CXX     kandinsky/fonts/ItalicSmallFontExtended.o
 CXX     kandinsky/fonts/LargeFontExtended.o
@@ -920,8 +920,8 @@ CXX     kandinsky/src/rect.o
 CC      liba/src/aeabi-rt/atexit.o
 AS      liba/src/armv7m/longjmp.o
 AS      liba/src/armv7m/setjmp.o
-CC      liba/src/ctype.o
 CC      liba/src/bzero.o
+CC      liba/src/ctype.o
 CC      liba/src/errno.o
 CC      liba/src/external/openbsd/b_exp__D.o
 CC      liba/src/external/openbsd/b_log__D.o
@@ -945,8 +945,8 @@ CC      liba/src/external/openbsd/e_fmodf.o
 CC      liba/src/external/openbsd/e_hypot.o
 CC      liba/src/external/openbsd/e_hypotf.o
 CC      liba/src/external/openbsd/e_lgamma_r.o
-CC      liba/src/external/openbsd/e_lgammaf_r.o
 CC      liba/src/external/openbsd/e_log.o
+CC      liba/src/external/openbsd/e_lgammaf_r.o
 CC      liba/src/external/openbsd/e_log10.o
 CC      liba/src/external/openbsd/e_log10f.o
 CC      liba/src/external/openbsd/e_log2.o
@@ -998,8 +998,8 @@ CC      liba/src/external/openbsd/s_modf.o
 CC      liba/src/external/openbsd/s_modff.o
 CC      liba/src/external/openbsd/s_nextafter.o
 CC      liba/src/external/openbsd/s_nextafterf.o
-CC      liba/src/external/openbsd/s_rint.o
 CC      liba/src/external/openbsd/s_round.o
+CC      liba/src/external/openbsd/s_rint.o
 CC      liba/src/external/openbsd/s_roundf.o
 CC      liba/src/external/openbsd/s_scalbn.o
 CC      liba/src/external/openbsd/s_scalbnf.o
@@ -1020,8 +1020,8 @@ CC      liba/src/fpclassifyf.o
 CC      liba/src/ieee754.o
 CC      liba/src/itoa.o
 CC      liba/src/malloc.o
-CC      liba/src/memmove.o
 CC      liba/src/memcmp.o
+CC      liba/src/memmove.o
 CC      liba/src/nearbyint.o
 CC      liba/src/nearbyintf.o
 CC      liba/src/strchr.o
@@ -1030,8 +1030,8 @@ CC      liba/src/strlcat.o
 CXX     libaxx/include/external/libcxx/complex.o
 CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/src/new.o
-CXX     poincare/src/addition.o
 CXX     poincare/src/absolute_value.o
+CXX     poincare/src/addition.o
 CXX     poincare/src/approximation_helper.o
 CXX     poincare/src/arc_cosine.o
 CXX     poincare/src/arc_sine.o
@@ -1193,13 +1193,13 @@ CXX     python/port/mod/kandinsky/modkandinsky.o
 CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
+CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
+CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
+CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
-CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
-CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
-CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
 CXX     python/port/mod/os/modos.o
@@ -1275,8 +1275,8 @@ CC      python/src/py/emitnx86.o
 CC      python/src/py/emitnxtensa.o
 CC      python/src/py/emitnxtensawin.o
 CC      python/src/py/formatfloat.o
-CC      python/src/py/frozenmod.o
 CC      python/src/py/gc.o
+CC      python/src/py/frozenmod.o
 CC      python/src/py/lexer.o
 CC      python/src/py/malloc.o
 CC      python/src/py/map.o
@@ -1412,9 +1412,9 @@ OBJCOPY ion/src/device/shared/usb/dfu.bin
 OBJCOPY ion/src/device/shared/usb/dfu.o
 LD      epsilon.onboarding.A.elf
 LD      epsilon.onboarding.B.elf
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/bootloader/epsilon.onboarding.B.elf has a LOAD segment with RWX permissions
-OBJCOPY epsilon.onboarding.B.bin
 /usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/bootloader/epsilon.onboarding.A.elf has a LOAD segment with RWX permissions
 OBJCOPY epsilon.onboarding.A.bin
+/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/bootloader/epsilon.onboarding.B.elf has a LOAD segment with RWX permissions
+OBJCOPY epsilon.onboarding.B.bin
 COMBINE output/release/device/bootloader/epsilon.onboarding.bin
-Compilation start: Wed Oct 1 10:32:44 PM CEST 2025
+Compilation start: Sat Sep 20 03:16:47 PM CEST 2025

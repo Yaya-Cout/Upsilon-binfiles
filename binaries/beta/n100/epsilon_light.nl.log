@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -60,7 +60,7 @@ binpack/epsilon.onboarding.internal.bin.sha256
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -133,6 +133,7 @@ CXX     apps/calculation/additional_outputs/trigonometry_graph_cell.o
 CXX     apps/calculation/additional_outputs/trigonometry_list_controller.o
 CXX     apps/calculation/additional_outputs/trigonometry_model.o
 CXX     apps/calculation/additional_outputs/unit_list_controller.o
+CXX     apps/calculation/calculation_icon.o
 apps/calculation/additional_outputs/second_degree_list_controller.cpp: In member function 'virtual void Calculation::SecondDegreeListController::setExpression(Poincare::Expression)':
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:41:7: warning: unused variable 'degree' [-Wunused-variable]
    41 |   int degree = m_expression.getPolynomialReducedCoefficients(
@@ -142,7 +143,6 @@ apps/calculation/additional_outputs/second_degree_list_controller.cpp:274:21: wa
   274 |     return std::move(e.childAtIndex(0).clone());
       |            ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:274:21: note: remove 'std::move' call
-CXX     apps/calculation/calculation_icon.o
 CXX     apps/calculation/calculation.o
 CXX     apps/calculation/calculation_store.o
 CXX     apps/calculation/edit_expression_controller.o
@@ -156,8 +156,8 @@ CXX     apps/code/console_controller.o
 CXX     apps/code/console_edit_cell.o
 CXX     apps/code/console_line_cell.o
 CXX     apps/code/console_store.o
-CXX     apps/code/editor_controller.o
 CXX     apps/code/editor_view.o
+CXX     apps/code/editor_controller.o
 CXX     apps/code/helpers.o
 CXX     apps/code/menu_controller.o
 CXX     apps/code/python_text_area.o
@@ -208,13 +208,13 @@ CXX     apps/hardware_test/app.o
 CXX     apps/hardware_test/arrow_view.o
 CXX     apps/hardware_test/battery_test_controller.o
 CXX     apps/hardware_test/code_128b_view.o
-CXX     apps/hardware_test/dead_pixels_test_controller.o
 CXX     apps/hardware_test/colors_lcd_test_controller.o
+CXX     apps/hardware_test/dead_pixels_test_controller.o
 CXX     apps/hardware_test/keyboard_model.o
 CXX     apps/hardware_test/keyboard_test_controller.o
 CXX     apps/hardware_test/keyboard_view.o
-CXX     apps/hardware_test/lcd_timing_test_controller.o
 CXX     apps/hardware_test/lcd_data_test_controller.o
+CXX     apps/hardware_test/lcd_timing_test_controller.o
 CXX     apps/hardware_test/led_test_controller.o
 CXX     apps/hardware_test/pop_up_controller.o
 CXX     apps/hardware_test/serial_number_controller.o
@@ -227,8 +227,8 @@ CXX     apps/home/selectable_table_view_with_background.o
 CXX     apps/host_filemanager.o
 CXX     apps/lock_view.o
 CXX     apps/main.o
-CXX     apps/math_toolbox.o
 CXX     apps/math_variable_box_controller.o
+CXX     apps/math_toolbox.o
 CXX     apps/math_variable_box_empty_controller.o
 CXX     apps/on_boarding/app.o
 CXX     apps/on_boarding/localization_controller.o
@@ -292,8 +292,8 @@ CXX     apps/probability/images/focused_geometric_icon.o
 CXX     apps/probability/images/focused_normal_icon.o
 CXX     apps/probability/images/focused_poisson_icon.o
 CXX     apps/probability/images/focused_student_icon.o
-CXX     apps/probability/images/focused_uniform_icon.o
 CXX     apps/probability/images/geometric_icon.o
+CXX     apps/probability/images/focused_uniform_icon.o
 CXX     apps/probability/images/normal_icon.o
 CXX     apps/probability/images/poisson_icon.o
 CXX     apps/probability/images/student_icon.o
@@ -312,8 +312,8 @@ CXX     apps/regression/graph_controller.o
 CXX     apps/regression/graph_options_controller.o
 CXX     apps/regression/graph_view.o
 CXX     apps/regression/linear_model_helper.o
-CXX     apps/regression/model/exponential_model.o
 CXX     apps/regression/model/cubic_model.o
+CXX     apps/regression/model/exponential_model.o
 CXX     apps/regression/model/linear_model.o
 CXX     apps/regression/model/logarithmic_model.o
 CXX     apps/regression/model/logistic_model.o
@@ -349,7 +349,6 @@ apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
 CXX     apps/sequence/graph/curve_parameter_controller.o
-CXX     apps/sequence/graph/curve_view_range.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/app.h:6,
@@ -361,7 +360,6 @@ In file included from apps/rpn/app.h:11:
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/go_to_parameter_controller.o
 In file included from apps/rpn/rpn_toolbox.h:6,
                  from apps/rpn/rpn_toolbox.cpp:1:
 ./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
@@ -370,6 +368,8 @@ In file included from apps/rpn/rpn_toolbox.h:6,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/sequence/graph/curve_view_range.o
+CXX     apps/sequence/graph/go_to_parameter_controller.o
 CXX     apps/sequence/graph/graph_controller.o
 CXX     apps/sequence/graph/graph_view.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(Poincare::ExpressionNode::Type, Poincare::Context*)':
@@ -382,12 +382,12 @@ apps/rpn/rpn_stack.cpp:161:35: warning: moving a temporary object prevents copy 
   161 |       return doOperation(std::move(specialOperators[i].op(*this)), *context, specialOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:161:35: note: remove 'std::move' call
+CXX     apps/sequence/graph/term_sum_controller.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(I18n::Message, Poincare::Context*)':
 apps/rpn/rpn_stack.cpp:257:35: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
   257 |       return doOperation(std::move(messageOperators[i].op(*this)), *context, messageOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:257:35: note: remove 'std::move' call
-CXX     apps/sequence/graph/term_sum_controller.o
 CXX     apps/sequence/list/list_controller.o
 CXX     apps/sequence/list/list_parameter_controller.o
 CXX     apps/sequence/list/sequence_toolbox.o
@@ -725,13 +725,13 @@ CXX     ion/src/device/shared/usb/stack/setup_packet.o
 CXX     ion/src/device/shared/usb/stack/streamable.o
 CC      liba/src/abs.o
 CC      liba/src/assert.o
-CC      liba/src/memset.o
 CC      liba/src/memcpy.o
+CC      liba/src/memset.o
 CC      liba/src/strlcpy.o
 CC      liba/src/strlen.o
 CXX     libaxx/src/cxxabi/pure_virtual.o
-CXX     ion/src/device/shared/usb/dfu_relocated.o
 CC      ion/src/external/lz4/lz4.o
+CXX     ion/src/device/shared/usb/dfu_relocated.o
 CXX     ion/src/shared/collect_registers.o
 CXX     ion/src/shared/console_line.o
 CXX     ion/src/shared/crc32_eat_byte.o
@@ -740,15 +740,15 @@ CXX     ion/src/shared/events.o
 CXX     ion/src/shared/events_keyboard.o
 CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/internal_storage.o
-CXX     ion/src/shared/rtc.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
+CXX     ion/src/shared/rtc.o
 CXX     ion/src/shared/stack_position.o
+CXX     ion/src/shared/storage.o
+CXX     ion/src/shared/unicode/utf8_decoder.o
 ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
 ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
   231 |     const char * name = fullNameOfRecordStarting(p);
       |                  ^~~~
-CXX     ion/src/shared/storage.o
-CXX     ion/src/shared/unicode/utf8_decoder.o
 CXX     ion/src/shared/unicode/utf8_helper.o
 CXX     kandinsky/fonts/ItalicLargeFontExtended.o
 CXX     kandinsky/fonts/ItalicSmallFontExtended.o
@@ -764,8 +764,8 @@ CXX     kandinsky/src/context_rect.o
 CXX     kandinsky/src/context_text.o
 CXX     kandinsky/src/font.o
 CXX     kandinsky/src/framebuffer.o
-CXX     kandinsky/src/framebuffer_context.o
 CXX     kandinsky/src/ion_context.o
+CXX     kandinsky/src/framebuffer_context.o
 CXX     kandinsky/src/point.o
 CXX     kandinsky/src/postprocess_context.o
 CXX     kandinsky/src/postprocess_gamma_context.o
@@ -813,10 +813,10 @@ CC      liba/src/external/openbsd/e_rem_pio2f.o
 CC      liba/src/external/openbsd/e_scalb.o
 CC      liba/src/external/openbsd/e_sinh.o
 CC      liba/src/external/openbsd/e_sinhf.o
-CC      liba/src/external/openbsd/e_sqrtf.o
 CC      liba/src/external/openbsd/e_sqrt.o
-CC      liba/src/external/openbsd/k_cosf.o
+CC      liba/src/external/openbsd/e_sqrtf.o
 CC      liba/src/external/openbsd/k_cos.o
+CC      liba/src/external/openbsd/k_cosf.o
 CC      liba/src/external/openbsd/k_rem_pio2.o
 CC      liba/src/external/openbsd/k_rem_pio2f.o
 CC      liba/src/external/openbsd/k_sin.o
@@ -848,13 +848,13 @@ CC      liba/src/external/openbsd/s_frexpf.o
 CC      liba/src/external/openbsd/s_log1p.o
 CC      liba/src/external/openbsd/s_log1pf.o
 CC      liba/src/external/openbsd/s_logb.o
-CC      liba/src/external/openbsd/s_modf.o
 CC      liba/src/external/openbsd/s_logbf.o
+CC      liba/src/external/openbsd/s_modf.o
 CC      liba/src/external/openbsd/s_modff.o
 CC      liba/src/external/openbsd/s_nextafter.o
 CC      liba/src/external/openbsd/s_nextafterf.o
-CC      liba/src/external/openbsd/s_rint.o
 CC      liba/src/external/openbsd/s_round.o
+CC      liba/src/external/openbsd/s_rint.o
 CC      liba/src/external/openbsd/s_roundf.o
 CC      liba/src/external/openbsd/s_scalbn.o
 CC      liba/src/external/openbsd/s_scalbnf.o
@@ -871,8 +871,8 @@ CC      liba/src/external/openbsd/w_lgamma.o
 CC      liba/src/external/openbsd/w_lgammaf.o
 CC      liba/src/external/sqlite/mem5.o
 CC      liba/src/fpclassify.o
-CC      liba/src/ieee754.o
 CC      liba/src/fpclassifyf.o
+CC      liba/src/ieee754.o
 CC      liba/src/itoa.o
 CC      liba/src/malloc.o
 CC      liba/src/memcmp.o
@@ -882,8 +882,8 @@ CC      liba/src/nearbyintf.o
 CC      liba/src/strchr.o
 CC      liba/src/strcmp.o
 CC      liba/src/strlcat.o
-CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/include/external/libcxx/complex.o
+CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/src/new.o
 CXX     poincare/src/absolute_value.o
 CXX     poincare/src/addition.o
@@ -958,8 +958,8 @@ CXX     poincare/src/layout.o
 CXX     poincare/src/layout_cursor.o
 CXX     poincare/src/layout_helper.o
 CXX     poincare/src/layout_node.o
-CXX     poincare/src/least_common_multiple.o
 CXX     poincare/src/left_parenthesis_layout.o
+CXX     poincare/src/least_common_multiple.o
 CXX     poincare/src/left_square_bracket_layout.o
 CXX     poincare/src/logarithm.o
 CXX     poincare/src/matrix.o
@@ -1049,13 +1049,13 @@ CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
+CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
+CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
+CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
-CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
-CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
-CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
 CXX     python/port/mod/os/modos.o
 CC      python/port/mod/os/modos_table.o
@@ -1068,8 +1068,6 @@ CC      python/port/mphalport.o
 CXX     python/port/port.o
 CC      python/port/stackctrl.o
 CC      python/src/extmod/modurandom.o
-CC      python/src/py/argcheck.o
-CC      python/src/py/asmarm.o
 python/port/stackctrl.c: In function 'mp_stack_ctrl_init':
 python/port/stackctrl.c:35:32: warning: storing the address of local variable 'stack_dummy' in 'mp_state_ctx.thread.stack_top' [-Wdangling-pointer=]
    35 |     MP_STATE_THREAD(stack_top) = (char*)&stack_dummy;
@@ -1080,6 +1078,8 @@ In file included from python/port/stackctrl.c:27:
 python/src/py/mpstate.h:323:23: note: 'mp_state_ctx' declared here
   323 | extern mp_state_ctx_t mp_state_ctx;
       |                       ^~~~~~~~~~~~
+CC      python/src/py/argcheck.o
+CC      python/src/py/asmarm.o
 CC      python/src/py/asmbase.o
 CC      python/src/py/asmthumb.o
 CC      python/src/py/asmx64.o
@@ -1102,14 +1102,14 @@ CC      python/src/py/emitnx64.o
 CC      python/src/py/emitnx86.o
 CC      python/src/py/emitnxtensa.o
 CC      python/src/py/emitnxtensawin.o
-CC      python/src/py/frozenmod.o
 CC      python/src/py/formatfloat.o
+CC      python/src/py/frozenmod.o
 CC      python/src/py/gc.o
 CC      python/src/py/lexer.o
 CC      python/src/py/malloc.o
 CC      python/src/py/map.o
-CC      python/src/py/modarray.o
 CC      python/src/py/modbuiltins.o
+CC      python/src/py/modarray.o
 CC      python/src/py/modcmath.o
 CC      python/src/py/modcollections.o
 CC      python/src/py/modgc.o
@@ -1131,8 +1131,8 @@ CC      python/src/py/nlrsetjmp.o
 CC      python/src/py/nlrthumb.o
 CC      python/src/py/nlrx64.o
 CC      python/src/py/nlrx86.o
-CC      python/src/py/obj.o
 CC      python/src/py/nlrxtensa.o
+CC      python/src/py/obj.o
 CC      python/src/py/objarray.o
 CC      python/src/py/objattrtuple.o
 CC      python/src/py/objbool.o

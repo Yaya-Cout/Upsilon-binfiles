@@ -1,4 +1,4 @@
-Compilation start: Wed Oct 1 10:35:41 PM CEST 2025
+Compilation start: Sat Sep 20 03:19:39 PM CEST 2025
 [91m[36m         __  __      ______ ____   ____   _____
 [91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
 [91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
@@ -8,14 +8,14 @@ Compilation start: Wed Oct 1 10:35:41 PM CEST 2025
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks 
 [32m    Building on Linux amd64
 [0m[39m
 CXX     ion/src/device/bootloader/drivers/external_flash.o
-QSTRDAT python/port/genhdr/qstrdefs.generated.h
-I18N    apps/i18n.cpp
 APPS_LAYOUTapps/home/apps_layout.cpp
+I18N    apps/i18n.cpp
+QSTRDAT python/port/genhdr/qstrdefs.generated.h
 THEME   escher/palette.h
 HOSTCC  escher/image/inliner
 CXX     ion/src/device/shared/usb/boot.o
@@ -48,4 +48,4 @@ Traceback (most recent call last):
 AttributeError: module 'os' has no attribute 'stderr'
 make: *** [escher/Makefile:13: output/release/device/bootloader/escher/palette.h] Error 1
 make: *** Waiting for unfinished jobs....
-Compilation start: Wed Oct 1 10:35:43 PM CEST 2025
+Compilation start: Sat Sep 20 03:19:41 PM CEST 2025

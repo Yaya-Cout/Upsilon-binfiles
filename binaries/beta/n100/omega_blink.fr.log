@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -60,7 +60,7 @@ binpack/epsilon.onboarding.internal.bin.sha256
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -227,8 +227,8 @@ CXX     apps/home/selectable_table_view_with_background.o
 CXX     apps/host_filemanager.o
 CXX     apps/lock_view.o
 CXX     apps/main.o
-CXX     apps/math_variable_box_controller.o
 CXX     apps/math_toolbox.o
+CXX     apps/math_variable_box_controller.o
 CXX     apps/math_variable_box_empty_controller.o
 CXX     apps/on_boarding/app.o
 CXX     apps/on_boarding/localization_controller.o
@@ -263,8 +263,8 @@ CXX     apps/probability/images/calcul3_icon.o
 CXX     apps/probability/images/calcul4_icon.o
 CXX     apps/probability/images/focused_calcul1_icon.o
 CXX     apps/probability/images/focused_calcul2_icon.o
-CXX     apps/probability/images/focused_calcul3_icon.o
 CXX     apps/probability/images/focused_calcul4_icon.o
+CXX     apps/probability/images/focused_calcul3_icon.o
 CXX     apps/probability/cell.o
 CXX     apps/probability/distribution/binomial_distribution.o
 CXX     apps/probability/distribution/chi_squared_distribution.o
@@ -334,7 +334,6 @@ CXX     apps/rpn/rpn_input_controller.o
 CXX     apps/rpn/rpn_stack.o
 CXX     apps/rpn/rpn_stack_controller.o
 CXX     apps/rpn/rpn_toolbox.o
-CXX     apps/sequence/sequence_icon.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/../shared/text_field_delegate.h:4,
@@ -348,8 +347,17 @@ In file included from apps/rpn/app.h:11,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/sequence/sequence_icon.o
 CXX     apps/sequence/graph/curve_parameter_controller.o
 CXX     apps/sequence/graph/curve_view_range.o
+In file included from apps/rpn/rpn_toolbox.h:6,
+                 from apps/rpn/rpn_toolbox.cpp:1:
+./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
+   12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
+      |        ^~~~~~~~~~
+apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
+   17 |   bool selectLeaf(int selectedRow);
+      |        ^~~~~~~~~~
 CXX     apps/sequence/graph/go_to_parameter_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
@@ -359,14 +367,6 @@ apps/rpn/../shared/../math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::s
    12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
       |        ^~~~~~~~~~
 In file included from apps/rpn/app.h:11:
-apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
-   17 |   bool selectLeaf(int selectedRow);
-      |        ^~~~~~~~~~
-In file included from apps/rpn/rpn_toolbox.h:6,
-                 from apps/rpn/rpn_toolbox.cpp:1:
-./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
-   12 |   bool selectLeaf(int selectedRow, bool quitToolbox) override;
-      |        ^~~~~~~~~~
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
@@ -382,12 +382,12 @@ apps/rpn/rpn_stack.cpp:161:35: warning: moving a temporary object prevents copy 
   161 |       return doOperation(std::move(specialOperators[i].op(*this)), *context, specialOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:161:35: note: remove 'std::move' call
+CXX     apps/sequence/graph/term_sum_controller.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(I18n::Message, Poincare::Context*)':
 apps/rpn/rpn_stack.cpp:257:35: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
   257 |       return doOperation(std::move(messageOperators[i].op(*this)), *context, messageOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:257:35: note: remove 'std::move' call
-CXX     apps/sequence/graph/term_sum_controller.o
 CXX     apps/sequence/list/list_controller.o
 CXX     apps/sequence/list/list_parameter_controller.o
 CXX     apps/sequence/list/sequence_toolbox.o
@@ -484,11 +484,11 @@ CXX     apps/shared/range_1D.o
 CXX     apps/shared/range_parameter_controller.o
 CXX     apps/shared/regular_table_view_data_source.o
 CXX     apps/shared/round_cursor_view.o
-CXX     apps/shared/scrollable_multiple_expressions_view.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CXX     apps/shared/scrollable_multiple_expressions_view.o
 CXX     apps/shared/scrollable_two_expressions_cell.o
 CXX     apps/shared/separable.o
 CXX     apps/shared/separator_even_odd_buffer_text_cell.o
@@ -572,8 +572,8 @@ CXX     escher/src/even_odd_buffer_text_cell.o
 CXX     escher/src/even_odd_cell.o
 CXX     escher/src/even_odd_cell_with_ellipsis.o
 CXX     escher/src/even_odd_editable_text_cell.o
-CXX     escher/src/even_odd_expression_cell.o
 CXX     escher/src/even_odd_message_text_cell.o
+CXX     escher/src/even_odd_expression_cell.o
 CXX     escher/src/expression_field.o
 CXX     escher/src/expression_table_cell.o
 CXX     escher/src/expression_table_cell_with_expression.o
@@ -699,8 +699,8 @@ CXX     ion/src/device/shared/drivers/usb.o
 CXX     ion/src/device/shared/drivers/usb_desc.o
 CXX     ion/src/device/shared/drivers/wakeup.o
 CXX     ion/src/device/shared/events.o
-CXX     ion/src/device/shared/drivers/console_uart.o
 CXX     ion/src/device/shared/stack.o
+CXX     ion/src/device/shared/drivers/console_uart.o
 CXX     ion/src/device/shared/usb/calculator.o
 CXX     ion/src/device/shared/usb/dfu_interface.o
 CXX     ion/src/device/shared/usb/stack/descriptor/bos_descriptor.o
@@ -737,8 +737,8 @@ CXX     ion/src/shared/console_line.o
 CXX     ion/src/shared/crc32_eat_byte.o
 CXX     ion/src/shared/decompress.o
 CXX     ion/src/shared/events.o
-CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/events_keyboard.o
+CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
 CXX     ion/src/shared/rtc.o
@@ -781,8 +781,8 @@ CC      liba/src/errno.o
 CC      liba/src/external/openbsd/b_exp__D.o
 CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/b_tgamma.o
-CC      liba/src/external/openbsd/e_acosf.o
 CC      liba/src/external/openbsd/e_acos.o
+CC      liba/src/external/openbsd/e_acosf.o
 CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acoshf.o
 CC      liba/src/external/openbsd/e_asin.o
@@ -808,8 +808,8 @@ CC      liba/src/external/openbsd/e_log2.o
 CC      liba/src/external/openbsd/e_logf.o
 CC      liba/src/external/openbsd/e_pow.o
 CC      liba/src/external/openbsd/e_powf.o
-CC      liba/src/external/openbsd/e_rem_pio2.o
 CC      liba/src/external/openbsd/e_rem_pio2f.o
+CC      liba/src/external/openbsd/e_rem_pio2.o
 CC      liba/src/external/openbsd/e_scalb.o
 CC      liba/src/external/openbsd/e_sinh.o
 CC      liba/src/external/openbsd/e_sinhf.o
@@ -833,18 +833,18 @@ CC      liba/src/external/openbsd/s_copysign.o
 CC      liba/src/external/openbsd/s_copysignf.o
 CC      liba/src/external/openbsd/s_cos.o
 CC      liba/src/external/openbsd/s_cosf.o
-CC      liba/src/external/openbsd/s_erf.o
 CC      liba/src/external/openbsd/s_erff.o
+CC      liba/src/external/openbsd/s_erf.o
 CC      liba/src/external/openbsd/s_expm1.o
 CC      liba/src/external/openbsd/s_expm1f.o
 CC      liba/src/external/openbsd/s_fabs.o
 CC      liba/src/external/openbsd/s_fabsf.o
 CC      liba/src/external/openbsd/s_floor.o
-CC      liba/src/external/openbsd/s_floorf.o
 CC      liba/src/external/openbsd/s_fmax.o
-CC      liba/src/external/openbsd/s_frexp.o
+CC      liba/src/external/openbsd/s_floorf.o
 CC      liba/src/external/openbsd/s_fmaxf.o
 CC      liba/src/external/openbsd/s_frexpf.o
+CC      liba/src/external/openbsd/s_frexp.o
 CC      liba/src/external/openbsd/s_log1p.o
 CC      liba/src/external/openbsd/s_log1pf.o
 CC      liba/src/external/openbsd/s_logb.o
@@ -864,8 +864,8 @@ CC      liba/src/external/openbsd/s_sinf.o
 CC      liba/src/external/openbsd/s_tan.o
 CC      liba/src/external/openbsd/s_tanf.o
 CC      liba/src/external/openbsd/s_tanh.o
-CC      liba/src/external/openbsd/s_trunc.o
 CC      liba/src/external/openbsd/s_tanhf.o
+CC      liba/src/external/openbsd/s_trunc.o
 CC      liba/src/external/openbsd/s_truncf.o
 CC      liba/src/external/openbsd/w_lgamma.o
 CC      liba/src/external/openbsd/w_lgammaf.o
@@ -882,28 +882,28 @@ CC      liba/src/nearbyintf.o
 CC      liba/src/strchr.o
 CC      liba/src/strcmp.o
 CC      liba/src/strlcat.o
-CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/include/external/libcxx/complex.o
+CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/src/new.o
 CXX     poincare/src/absolute_value.o
 CXX     poincare/src/addition.o
 CXX     poincare/src/approximation_helper.o
-CXX     poincare/src/arc_sine.o
 CXX     poincare/src/arc_cosine.o
+CXX     poincare/src/arc_sine.o
 CXX     poincare/src/arc_tangent.o
 CXX     poincare/src/arithmetic.o
 CXX     poincare/src/based_integer.o
 CXX     poincare/src/beta_function.o
 CXX     poincare/src/binom_cdf.o
 CXX     poincare/src/binom_pdf.o
-CXX     poincare/src/binomial_coefficient.o
 CXX     poincare/src/binomial_coefficient_layout.o
+CXX     poincare/src/binomial_coefficient.o
 CXX     poincare/src/binomial_distribution.o
 CXX     poincare/src/binomial_distribution_function.o
 CXX     poincare/src/bracket_layout.o
 CXX     poincare/src/bracket_pair_layout.o
-CXX     poincare/src/ceiling.o
 CXX     poincare/src/code_point_layout.o
+CXX     poincare/src/ceiling.o
 CXX     poincare/src/complex.o
 CXX     poincare/src/complex_argument.o
 CXX     poincare/src/complex_cartesian.o
@@ -961,8 +961,8 @@ CXX     poincare/src/layout_node.o
 CXX     poincare/src/least_common_multiple.o
 CXX     poincare/src/left_parenthesis_layout.o
 CXX     poincare/src/left_square_bracket_layout.o
-CXX     poincare/src/matrix.o
 CXX     poincare/src/logarithm.o
+CXX     poincare/src/matrix.o
 CXX     poincare/src/matrix_complex.o
 CXX     poincare/src/matrix_dimension.o
 CXX     poincare/src/matrix_echelon_form.o
@@ -1049,11 +1049,11 @@ CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
-CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
+CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
@@ -1115,8 +1115,8 @@ CC      python/src/py/modcollections.o
 CC      python/src/py/modgc.o
 CC      python/src/py/modio.o
 CC      python/src/py/modmath.o
-CC      python/src/py/modmicropython.o
 CC      python/src/py/modstruct.o
+CC      python/src/py/modmicropython.o
 CC      python/src/py/modsys.o
 CC      python/src/py/modthread.o
 CC      python/src/py/moduerrno.o
@@ -1129,8 +1129,8 @@ CC      python/src/py/nlraarch64.o
 CC      python/src/py/nlrpowerpc.o
 CC      python/src/py/nlrsetjmp.o
 CC      python/src/py/nlrthumb.o
-CC      python/src/py/nlrx86.o
 CC      python/src/py/nlrx64.o
+CC      python/src/py/nlrx86.o
 CC      python/src/py/nlrxtensa.o
 CC      python/src/py/obj.o
 CC      python/src/py/objarray.o
@@ -1143,8 +1143,8 @@ CC      python/src/py/objcomplex.o
 CC      python/src/py/objdeque.o
 CC      python/src/py/objdict.o
 CC      python/src/py/objenumerate.o
-CC      python/src/py/objexcept.o
 CC      python/src/py/objfilter.o
+CC      python/src/py/objexcept.o
 CC      python/src/py/objfloat.o
 CC      python/src/py/objfun.o
 CC      python/src/py/objgenerator.o
@@ -1153,8 +1153,8 @@ CC      python/src/py/objint.o
 CC      python/src/py/objint_longlong.o
 CC      python/src/py/objint_mpz.o
 CC      python/src/py/objlist.o
-CC      python/src/py/objmodule.o
 CC      python/src/py/objmap.o
+CC      python/src/py/objmodule.o
 CC      python/src/py/objnamedtuple.o
 CC      python/src/py/objnone.o
 CC      python/src/py/objobject.o
@@ -1185,8 +1185,8 @@ CC      python/src/py/repl.o
 CC      python/src/py/ringbuf.o
 CC      python/src/py/runtime.o
 CC      python/src/py/runtime_utils.o
-CC      python/src/py/scheduler.o
 CC      python/src/py/scope.o
+CC      python/src/py/scheduler.o
 CC      python/src/py/sequence.o
 CC      python/src/py/showbc.o
 CC      python/src/py/smallint.o

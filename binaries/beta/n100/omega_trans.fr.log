@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -60,7 +60,7 @@ binpack/epsilon.onboarding.internal.bin.sha256
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.1-E15.5.0
+[32mBuilding U1.1.0-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -133,7 +133,6 @@ CXX     apps/calculation/additional_outputs/trigonometry_graph_cell.o
 CXX     apps/calculation/additional_outputs/trigonometry_list_controller.o
 CXX     apps/calculation/additional_outputs/trigonometry_model.o
 CXX     apps/calculation/additional_outputs/unit_list_controller.o
-CXX     apps/calculation/calculation_icon.o
 apps/calculation/additional_outputs/second_degree_list_controller.cpp: In member function 'virtual void Calculation::SecondDegreeListController::setExpression(Poincare::Expression)':
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:41:7: warning: unused variable 'degree' [-Wunused-variable]
    41 |   int degree = m_expression.getPolynomialReducedCoefficients(
@@ -143,6 +142,7 @@ apps/calculation/additional_outputs/second_degree_list_controller.cpp:274:21: wa
   274 |     return std::move(e.childAtIndex(0).clone());
       |            ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:274:21: note: remove 'std::move' call
+CXX     apps/calculation/calculation_icon.o
 CXX     apps/calculation/calculation.o
 CXX     apps/calculation/calculation_store.o
 CXX     apps/calculation/edit_expression_controller.o
@@ -263,8 +263,8 @@ CXX     apps/probability/images/calcul3_icon.o
 CXX     apps/probability/images/calcul4_icon.o
 CXX     apps/probability/images/focused_calcul1_icon.o
 CXX     apps/probability/images/focused_calcul2_icon.o
-CXX     apps/probability/images/focused_calcul3_icon.o
 CXX     apps/probability/images/focused_calcul4_icon.o
+CXX     apps/probability/images/focused_calcul3_icon.o
 CXX     apps/probability/cell.o
 CXX     apps/probability/distribution/binomial_distribution.o
 CXX     apps/probability/distribution/chi_squared_distribution.o
@@ -288,8 +288,8 @@ CXX     apps/probability/images/focused_binomial_icon.o
 CXX     apps/probability/images/focused_chi_squared_icon.o
 CXX     apps/probability/images/focused_exponential_icon.o
 CXX     apps/probability/images/focused_fisher_icon.o
-CXX     apps/probability/images/focused_geometric_icon.o
 CXX     apps/probability/images/focused_normal_icon.o
+CXX     apps/probability/images/focused_geometric_icon.o
 CXX     apps/probability/images/focused_poisson_icon.o
 CXX     apps/probability/images/focused_student_icon.o
 CXX     apps/probability/images/focused_uniform_icon.o
@@ -359,6 +359,7 @@ In file included from apps/rpn/rpn_toolbox.h:6,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/sequence/graph/graph_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/app.h:6,
@@ -370,7 +371,6 @@ In file included from apps/rpn/app.h:11:
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/graph_controller.o
 CXX     apps/sequence/graph/graph_view.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(Poincare::ExpressionNode::Type, Poincare::Context*)':
 apps/rpn/rpn_stack.cpp:140:35: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
@@ -416,11 +416,11 @@ CXX     apps/settings/sub_menu/external_controller.o
 CXX     apps/settings/sub_menu/generic_sub_controller.o
 CXX     apps/settings/sub_menu/localization_controller.o
 CXX     apps/settings/sub_menu/math_options_controller.o
-CXX     apps/settings/sub_menu/preferences_controller.o
 apps/settings/sub_menu/exam_mode_controller.cpp: In member function 'virtual void Settings::ExamModeController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/settings/sub_menu/exam_mode_controller.cpp:86:17: warning: unused variable 'preferences' [-Wunused-variable]
    86 |   Preferences * preferences = Preferences::sharedPreferences();
       |                 ^~~~~~~~~~~
+CXX     apps/settings/sub_menu/preferences_controller.o
 CXX     apps/settings/sub_menu/selectable_view_with_messages.o
 CXX     apps/shared/banner_view.o
 CXX     apps/shared/buffer_function_title_cell.o
@@ -483,12 +483,12 @@ CXX     apps/shared/post_and_hardware_tests.o
 CXX     apps/shared/range_1D.o
 CXX     apps/shared/range_parameter_controller.o
 CXX     apps/shared/regular_table_view_data_source.o
-CXX     apps/shared/round_cursor_view.o
-CXX     apps/shared/scrollable_multiple_expressions_view.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CXX     apps/shared/round_cursor_view.o
+CXX     apps/shared/scrollable_multiple_expressions_view.o
 CXX     apps/shared/scrollable_two_expressions_cell.o
 CXX     apps/shared/separable.o
 CXX     apps/shared/separator_even_odd_buffer_text_cell.o
@@ -605,16 +605,16 @@ CXX     escher/src/metric.o
 CXX     escher/src/modal_view_controller.o
 CXX     escher/src/modal_view_empty_controller.o
 CXX     escher/src/nested_menu_controller.o
-CXX     escher/src/pointer_text_view.o
 CXX     escher/src/palette.o
+CXX     escher/src/pointer_text_view.o
 CXX     escher/src/pop_up_controller.o
 CXX     escher/src/responder.o
 CXX     escher/src/run_loop.o
 CXX     escher/src/scroll_view.o
 CXX     escher/src/scroll_view_data_source.o
 CXX     escher/src/scroll_view_indicator.o
-CXX     escher/src/scrollable_view.o
 CXX     escher/src/scrollable_expression_view.o
+CXX     escher/src/scrollable_view.o
 CXX     escher/src/selectable_table_view.o
 CXX     escher/src/simple_list_view_data_source.o
 CXX     escher/src/simple_table_view_data_source.o
@@ -623,8 +623,8 @@ CXX     escher/src/solid_color_view.o
 CXX     escher/src/stack_view.o
 CXX     escher/src/stack_view_controller.o
 CXX     escher/src/switch_view.o
-CXX     escher/src/tab_view_cell.o
 CXX     escher/src/tab_view.o
+CXX     escher/src/tab_view_cell.o
 CXX     escher/src/tab_view_controller.o
 CXX     escher/src/tab_view_data_source.o
 CXX     escher/src/table_cell.o
@@ -706,19 +706,19 @@ CXX     ion/src/device/shared/usb/dfu_interface.o
 CXX     ion/src/device/shared/usb/stack/descriptor/bos_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/configuration_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/descriptor.o
-CXX     ion/src/device/shared/usb/stack/descriptor/device_capability_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/device_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/device_capability_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/dfu_functional_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/extended_compat_id_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/interface_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/language_id_string_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/microsoft_os_string_descriptor.o
-CXX     ion/src/device/shared/usb/stack/descriptor/platform_device_capability_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/string_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/platform_device_capability_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/url_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/webusb_platform_descriptor.o
-CXX     ion/src/device/shared/usb/stack/device.o
 CXX     ion/src/device/shared/usb/stack/endpoint0.o
+CXX     ion/src/device/shared/usb/stack/device.o
 CXX     ion/src/device/shared/usb/stack/interface.o
 CXX     ion/src/device/shared/usb/stack/request_recipient.o
 CXX     ion/src/device/shared/usb/stack/setup_packet.o
@@ -732,8 +732,8 @@ CC      liba/src/strlen.o
 CXX     libaxx/src/cxxabi/pure_virtual.o
 CXX     ion/src/device/shared/usb/dfu_relocated.o
 CC      ion/src/external/lz4/lz4.o
-CXX     ion/src/shared/collect_registers.o
 CXX     ion/src/shared/console_line.o
+CXX     ion/src/shared/collect_registers.o
 CXX     ion/src/shared/crc32_eat_byte.o
 CXX     ion/src/shared/decompress.o
 CXX     ion/src/shared/events.o
@@ -743,14 +743,14 @@ CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
 CXX     ion/src/shared/rtc.o
 CXX     ion/src/shared/stack_position.o
-ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
-ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
-  231 |     const char * name = fullNameOfRecordStarting(p);
-      |                  ^~~~
 CXX     ion/src/shared/storage.o
 CXX     ion/src/shared/unicode/utf8_decoder.o
 CXX     ion/src/shared/unicode/utf8_helper.o
 CXX     kandinsky/fonts/ItalicLargeFontExtended.o
+ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
+ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
+  231 |     const char * name = fullNameOfRecordStarting(p);
+      |                  ^~~~
 CXX     kandinsky/fonts/ItalicSmallFontExtended.o
 CXX     kandinsky/fonts/LargeFontExtended.o
 CXX     kandinsky/fonts/SmallFontExtended.o
@@ -763,8 +763,8 @@ CXX     kandinsky/src/context_polygon.o
 CXX     kandinsky/src/context_rect.o
 CXX     kandinsky/src/context_text.o
 CXX     kandinsky/src/font.o
-CXX     kandinsky/src/framebuffer.o
 CXX     kandinsky/src/framebuffer_context.o
+CXX     kandinsky/src/framebuffer.o
 CXX     kandinsky/src/ion_context.o
 CXX     kandinsky/src/point.o
 CXX     kandinsky/src/postprocess_context.o
@@ -779,16 +779,16 @@ CC      liba/src/bzero.o
 CC      liba/src/ctype.o
 CC      liba/src/errno.o
 CC      liba/src/external/openbsd/b_exp__D.o
-CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/b_tgamma.o
+CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/e_acos.o
 CC      liba/src/external/openbsd/e_acosf.o
 CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acoshf.o
 CC      liba/src/external/openbsd/e_asin.o
+CC      liba/src/external/openbsd/e_atan2f.o
 CC      liba/src/external/openbsd/e_asinf.o
 CC      liba/src/external/openbsd/e_atan2.o
-CC      liba/src/external/openbsd/e_atan2f.o
 CC      liba/src/external/openbsd/e_atanh.o
 CC      liba/src/external/openbsd/e_atanhf.o
 CC      liba/src/external/openbsd/e_cosh.o
@@ -798,18 +798,18 @@ CC      liba/src/external/openbsd/e_expf.o
 CC      liba/src/external/openbsd/e_fmod.o
 CC      liba/src/external/openbsd/e_fmodf.o
 CC      liba/src/external/openbsd/e_hypot.o
-CC      liba/src/external/openbsd/e_lgamma_r.o
 CC      liba/src/external/openbsd/e_hypotf.o
+CC      liba/src/external/openbsd/e_lgamma_r.o
 CC      liba/src/external/openbsd/e_lgammaf_r.o
 CC      liba/src/external/openbsd/e_log.o
 CC      liba/src/external/openbsd/e_log10.o
-CC      liba/src/external/openbsd/e_log10f.o
 CC      liba/src/external/openbsd/e_log2.o
+CC      liba/src/external/openbsd/e_log10f.o
 CC      liba/src/external/openbsd/e_logf.o
 CC      liba/src/external/openbsd/e_pow.o
 CC      liba/src/external/openbsd/e_powf.o
-CC      liba/src/external/openbsd/e_rem_pio2f.o
 CC      liba/src/external/openbsd/e_rem_pio2.o
+CC      liba/src/external/openbsd/e_rem_pio2f.o
 CC      liba/src/external/openbsd/e_scalb.o
 CC      liba/src/external/openbsd/e_sinh.o
 CC      liba/src/external/openbsd/e_sinhf.o
@@ -821,8 +821,8 @@ CC      liba/src/external/openbsd/k_rem_pio2.o
 CC      liba/src/external/openbsd/k_rem_pio2f.o
 CC      liba/src/external/openbsd/k_sin.o
 CC      liba/src/external/openbsd/k_sinf.o
-CC      liba/src/external/openbsd/k_tan.o
 CC      liba/src/external/openbsd/k_tanf.o
+CC      liba/src/external/openbsd/k_tan.o
 CC      liba/src/external/openbsd/s_asinh.o
 CC      liba/src/external/openbsd/s_asinhf.o
 CC      liba/src/external/openbsd/s_atan.o
@@ -870,21 +870,21 @@ CC      liba/src/external/openbsd/s_truncf.o
 CC      liba/src/external/openbsd/w_lgamma.o
 CC      liba/src/external/openbsd/w_lgammaf.o
 CC      liba/src/external/sqlite/mem5.o
-CC      liba/src/fpclassifyf.o
 CC      liba/src/fpclassify.o
+CC      liba/src/fpclassifyf.o
 CC      liba/src/ieee754.o
 CC      liba/src/itoa.o
-CC      liba/src/malloc.o
 CC      liba/src/memcmp.o
+CC      liba/src/malloc.o
 CC      liba/src/memmove.o
 CC      liba/src/nearbyint.o
 CC      liba/src/nearbyintf.o
 CC      liba/src/strchr.o
 CC      liba/src/strcmp.o
 CC      liba/src/strlcat.o
+CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/include/external/libcxx/complex.o
 CXX     libaxx/src/new.o
-CXX     libaxx/src/cxxabi/atexit.o
 CXX     poincare/src/absolute_value.o
 CXX     poincare/src/addition.o
 CXX     poincare/src/approximation_helper.o
@@ -923,8 +923,8 @@ CXX     poincare/src/empty_expression.o
 CXX     poincare/src/empty_layout.o
 CXX     poincare/src/equal.o
 CXX     poincare/src/erf_inv.o
-CXX     poincare/src/exception_checkpoint.o
 CXX     poincare/src/evaluation.o
+CXX     poincare/src/exception_checkpoint.o
 CXX     poincare/src/expression.o
 CXX     poincare/src/expression_node.o
 CXX     poincare/src/factor.o
@@ -936,8 +936,8 @@ CXX     poincare/src/fraction_layout.o
 CXX     poincare/src/function.o
 CXX     poincare/src/great_common_divisor.o
 CXX     poincare/src/grid_layout.o
-CXX     poincare/src/horizontal_layout.o
 CXX     poincare/src/helpers.o
+CXX     poincare/src/horizontal_layout.o
 CXX     poincare/src/hyperbolic_arc_cosine.o
 CXX     poincare/src/hyperbolic_arc_sine.o
 CXX     poincare/src/hyperbolic_arc_tangent.o
@@ -1068,6 +1068,7 @@ CC      python/port/mphalport.o
 CXX     python/port/port.o
 CC      python/port/stackctrl.o
 CC      python/src/extmod/modurandom.o
+CC      python/src/py/argcheck.o
 python/port/stackctrl.c: In function 'mp_stack_ctrl_init':
 python/port/stackctrl.c:35:32: warning: storing the address of local variable 'stack_dummy' in 'mp_state_ctx.thread.stack_top' [-Wdangling-pointer=]
    35 |     MP_STATE_THREAD(stack_top) = (char*)&stack_dummy;
@@ -1078,7 +1079,6 @@ In file included from python/port/stackctrl.c:27:
 python/src/py/mpstate.h:323:23: note: 'mp_state_ctx' declared here
   323 | extern mp_state_ctx_t mp_state_ctx;
       |                       ^~~~~~~~~~~~
-CC      python/src/py/argcheck.o
 CC      python/src/py/asmarm.o
 CC      python/src/py/asmbase.o
 CC      python/src/py/asmthumb.o
@@ -1193,8 +1193,8 @@ CC      python/src/py/smallint.o
 CC      python/src/py/stream.o
 CC      python/src/py/unicode.o
 CC      python/src/py/vm.o
-CC      python/src/py/vstr.o
 CC      python/src/py/warning.o
+CC      python/src/py/vstr.o
 CXX     apps/atomic/app.o
 CXX     apps/calculation/app.o
 CXX     apps/code/app.o

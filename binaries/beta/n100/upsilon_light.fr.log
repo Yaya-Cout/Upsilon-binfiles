@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -41,7 +41,7 @@ output/release/device/n0100/apps/i18n.h:290:3: note: name 'LanguageEN' differs f
 output/release/device/n0100/apps/i18n.h:290:3: note: mismatching definition
   290 |   LanguageFR,
       |   ^
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
+/usr/lib/gcc/arm-none-eabi/13.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
 Building an internal binary for     output/release/device/n0100/epsilon.onboarding.elf
 Padding output/release/device/n0100/epsilon.onboarding.internal.bin
 rm -rf output/release/device/n0100/binpack
@@ -60,7 +60,7 @@ binpack/epsilon.onboarding.internal.bin.sha256
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -96,6 +96,7 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/battery_timer.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -110,17 +111,16 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/battery_timer.o
 CXX     apps/battery_view.o
 CXX     apps/calculation/additional_outputs/complex_graph_cell.o
 CXX     apps/calculation/additional_outputs/complex_list_controller.o
 CXX     apps/calculation/additional_outputs/complex_model.o
 CXX     apps/calculation/additional_outputs/expression_with_equal_sign_view.o
+CXX     apps/calculation/additional_outputs/expressions_list_controller.o
 apps/atomic/list_controller.cpp: In member function 'virtual int Atomic::ListController::reusableCellCount(int)':
 apps/atomic/list_controller.cpp:116:5: warning: control reaches end of non-void function [-Wreturn-type]
   116 |     default:
       |     ^~~~~~~
-CXX     apps/calculation/additional_outputs/expressions_list_controller.o
 CXX     apps/calculation/additional_outputs/illustrated_list_controller.o
 CXX     apps/calculation/additional_outputs/illustration_cell.o
 CXX     apps/calculation/additional_outputs/integer_list_controller.o
@@ -134,6 +134,7 @@ CXX     apps/calculation/additional_outputs/trigonometry_list_controller.o
 CXX     apps/calculation/additional_outputs/trigonometry_model.o
 CXX     apps/calculation/additional_outputs/unit_list_controller.o
 CXX     apps/calculation/calculation_icon.o
+CXX     apps/calculation/calculation.o
 apps/calculation/additional_outputs/second_degree_list_controller.cpp: In member function 'virtual void Calculation::SecondDegreeListController::setExpression(Poincare::Expression)':
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:41:7: warning: unused variable 'degree' [-Wunused-variable]
    41 |   int degree = m_expression.getPolynomialReducedCoefficients(
@@ -143,7 +144,6 @@ apps/calculation/additional_outputs/second_degree_list_controller.cpp:274:21: wa
   274 |     return std::move(e.childAtIndex(0).clone());
       |            ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/calculation/additional_outputs/second_degree_list_controller.cpp:274:21: note: remove 'std::move' call
-CXX     apps/calculation/calculation.o
 CXX     apps/calculation/calculation_store.o
 CXX     apps/calculation/edit_expression_controller.o
 CXX     apps/calculation/expression_field.o
@@ -258,8 +258,8 @@ CXX     apps/probability/calculation/left_integral_calculation.o
 CXX     apps/probability/calculation/right_integral_calculation.o
 CXX     apps/probability/calculation_cell.o
 CXX     apps/probability/images/calcul1_icon.o
-CXX     apps/probability/images/calcul2_icon.o
 CXX     apps/probability/images/calcul3_icon.o
+CXX     apps/probability/images/calcul2_icon.o
 CXX     apps/probability/images/calcul4_icon.o
 CXX     apps/probability/images/focused_calcul1_icon.o
 CXX     apps/probability/images/focused_calcul2_icon.o
@@ -277,8 +277,8 @@ CXX     apps/probability/distribution/hypergeometric_function.o
 CXX     apps/probability/distribution/normal_distribution.o
 CXX     apps/probability/distribution/poisson_distribution.o
 CXX     apps/probability/distribution/regularized_gamma.o
-CXX     apps/probability/distribution/student_distribution.o
 CXX     apps/probability/distribution/two_parameter_distribution.o
+CXX     apps/probability/distribution/student_distribution.o
 CXX     apps/probability/distribution/uniform_distribution.o
 CXX     apps/probability/images/binomial_icon.o
 CXX     apps/probability/images/chi_squared_icon.o
@@ -295,8 +295,8 @@ CXX     apps/probability/images/focused_student_icon.o
 CXX     apps/probability/images/focused_uniform_icon.o
 CXX     apps/probability/images/geometric_icon.o
 CXX     apps/probability/images/normal_icon.o
-CXX     apps/probability/images/poisson_icon.o
 CXX     apps/probability/images/student_icon.o
+CXX     apps/probability/images/poisson_icon.o
 CXX     apps/probability/images/uniform_icon.o
 CXX     apps/probability/distribution_curve_view.o
 CXX     apps/probability/image_cell.o
@@ -335,7 +335,6 @@ CXX     apps/rpn/rpn_stack.o
 CXX     apps/rpn/rpn_stack_controller.o
 CXX     apps/rpn/rpn_toolbox.o
 CXX     apps/sequence/sequence_icon.o
-CXX     apps/sequence/graph/curve_parameter_controller.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/../shared/text_field_delegate.h:4,
@@ -349,7 +348,7 @@ In file included from apps/rpn/app.h:11,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/curve_view_range.o
+CXX     apps/sequence/graph/curve_parameter_controller.o
 In file included from apps/rpn/rpn_toolbox.h:6,
                  from apps/rpn/rpn_toolbox.cpp:1:
 ./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
@@ -358,8 +357,7 @@ In file included from apps/rpn/rpn_toolbox.h:6,
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/go_to_parameter_controller.o
-CXX     apps/sequence/graph/graph_controller.o
+CXX     apps/sequence/graph/curve_view_range.o
 In file included from apps/rpn/../shared/../apps_container.h:10,
                  from apps/rpn/../shared/text_field_delegate_app.h:8,
                  from apps/rpn/app.h:6,
@@ -371,6 +369,8 @@ In file included from apps/rpn/app.h:11:
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/sequence/graph/go_to_parameter_controller.o
+CXX     apps/sequence/graph/graph_controller.o
 CXX     apps/sequence/graph/graph_view.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(Poincare::ExpressionNode::Type, Poincare::Context*)':
 apps/rpn/rpn_stack.cpp:140:35: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
@@ -485,11 +485,11 @@ CXX     apps/shared/range_parameter_controller.o
 CXX     apps/shared/regular_table_view_data_source.o
 CXX     apps/shared/round_cursor_view.o
 CXX     apps/shared/scrollable_multiple_expressions_view.o
+CXX     apps/shared/scrollable_two_expressions_cell.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CXX     apps/shared/scrollable_two_expressions_cell.o
 CXX     apps/shared/separable.o
 CXX     apps/shared/separator_even_odd_buffer_text_cell.o
 CXX     apps/shared/sequence.o
@@ -586,8 +586,8 @@ CXX     escher/src/image_view.o
 CXX     escher/src/input_event_handler.o
 CXX     escher/src/input_view_controller.o
 CXX     escher/src/invocation.o
-CXX     escher/src/key_view.o
 CXX     escher/src/layout_field.o
+CXX     escher/src/key_view.o
 CXX     escher/src/list_view_data_source.o
 CXX     escher/src/message_table_cell.o
 CXX     escher/src/message_table_cell_with_buffer.o
@@ -638,17 +638,17 @@ CXX     escher/src/text_input_helpers.o
 CXX     escher/src/text_view.o
 CXX     escher/src/tiled_view.o
 CXX     escher/src/timer.o
-CXX     escher/src/toggleable_dot_view.o
 escher/src/timer.cpp: In member function 'void Timer::reset(uint32_t)':
 escher/src/timer.cpp:20:16: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'unsigned int'} and 'int' [-Wsign-compare]
    20 |   if(NewPeriod != -1){
       |      ~~~~~~~~~~^~~~~
+CXX     escher/src/toggleable_dot_view.o
 CXX     escher/src/toggleable_view.o
 CXX     escher/src/toolbox.o
 CXX     escher/src/transparent_view.o
 CXX     escher/src/view.o
-CXX     escher/src/warning_controller.o
 CXX     escher/src/view_controller.o
+CXX     escher/src/warning_controller.o
 CXX     escher/src/window.o
 CXX     ion/src/device/n0100/boot/rt0.o
 CXX     ion/src/device/n0100/drivers/board.o
@@ -662,10 +662,10 @@ CC      ion/src/device/shared/boot/isr.o
 <command-line>: warning: "EPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: "OMEGA_VERSION" redefined
+CXX     ion/src/device/shared/drivers/backlight.o
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: "UPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
-CXX     ion/src/device/shared/drivers/backlight.o
 CXX     ion/src/device/shared/drivers/base64.o
 ion/src/device/n0100/boot/rt0.cpp:122:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
   122 | void __attribute__((interrupt, noinline)) isr_systick() {
@@ -693,8 +693,8 @@ CXX     ion/src/device/shared/drivers/random.o
 CXX     ion/src/device/shared/drivers/reset.o
 CXX     ion/src/device/shared/drivers/rtc.o
 CXX     ion/src/device/shared/drivers/serial_number.o
-CXX     ion/src/device/shared/drivers/timing.o
 CXX     ion/src/device/shared/drivers/swd.o
+CXX     ion/src/device/shared/drivers/timing.o
 CXX     ion/src/device/shared/drivers/usb.o
 CXX     ion/src/device/shared/drivers/usb_desc.o
 CXX     ion/src/device/shared/drivers/wakeup.o
@@ -742,11 +742,11 @@ CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
 CXX     ion/src/shared/rtc.o
+CXX     ion/src/shared/stack_position.o
 ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
 ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
   231 |     const char * name = fullNameOfRecordStarting(p);
       |                  ^~~~
-CXX     ion/src/shared/stack_position.o
 CXX     ion/src/shared/storage.o
 CXX     ion/src/shared/unicode/utf8_decoder.o
 CXX     ion/src/shared/unicode/utf8_helper.o
@@ -780,8 +780,8 @@ CC      liba/src/ctype.o
 CC      liba/src/errno.o
 CC      liba/src/external/openbsd/b_exp__D.o
 CC      liba/src/external/openbsd/b_log__D.o
-CC      liba/src/external/openbsd/e_acos.o
 CC      liba/src/external/openbsd/b_tgamma.o
+CC      liba/src/external/openbsd/e_acos.o
 CC      liba/src/external/openbsd/e_acosf.o
 CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acoshf.o
@@ -794,8 +794,8 @@ CC      liba/src/external/openbsd/e_atanhf.o
 CC      liba/src/external/openbsd/e_cosh.o
 CC      liba/src/external/openbsd/e_coshf.o
 CC      liba/src/external/openbsd/e_exp.o
-CC      liba/src/external/openbsd/e_expf.o
 CC      liba/src/external/openbsd/e_fmod.o
+CC      liba/src/external/openbsd/e_expf.o
 CC      liba/src/external/openbsd/e_fmodf.o
 CC      liba/src/external/openbsd/e_hypot.o
 CC      liba/src/external/openbsd/e_hypotf.o
@@ -835,8 +835,8 @@ CC      liba/src/external/openbsd/s_cos.o
 CC      liba/src/external/openbsd/s_cosf.o
 CC      liba/src/external/openbsd/s_erf.o
 CC      liba/src/external/openbsd/s_erff.o
-CC      liba/src/external/openbsd/s_expm1f.o
 CC      liba/src/external/openbsd/s_expm1.o
+CC      liba/src/external/openbsd/s_expm1f.o
 CC      liba/src/external/openbsd/s_fabs.o
 CC      liba/src/external/openbsd/s_fabsf.o
 CC      liba/src/external/openbsd/s_floor.o
@@ -864,8 +864,8 @@ CC      liba/src/external/openbsd/s_sinf.o
 CC      liba/src/external/openbsd/s_tan.o
 CC      liba/src/external/openbsd/s_tanf.o
 CC      liba/src/external/openbsd/s_tanh.o
-CC      liba/src/external/openbsd/s_tanhf.o
 CC      liba/src/external/openbsd/s_trunc.o
+CC      liba/src/external/openbsd/s_tanhf.o
 CC      liba/src/external/openbsd/s_truncf.o
 CC      liba/src/external/openbsd/w_lgamma.o
 CC      liba/src/external/openbsd/w_lgammaf.o
@@ -887,8 +887,8 @@ CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/src/new.o
 CXX     poincare/src/absolute_value.o
 CXX     poincare/src/addition.o
-CXX     poincare/src/approximation_helper.o
 CXX     poincare/src/arc_cosine.o
+CXX     poincare/src/approximation_helper.o
 CXX     poincare/src/arc_sine.o
 CXX     poincare/src/arc_tangent.o
 CXX     poincare/src/arithmetic.o
@@ -952,8 +952,8 @@ CXX     poincare/src/integer.o
 CXX     poincare/src/integral.o
 CXX     poincare/src/integral_layout.o
 CXX     poincare/src/inv_binom.o
-CXX     poincare/src/kmat.o
 CXX     poincare/src/inv_norm.o
+CXX     poincare/src/kmat.o
 CXX     poincare/src/layout.o
 CXX     poincare/src/layout_cursor.o
 CXX     poincare/src/layout_helper.o
@@ -1009,8 +1009,8 @@ CXX     poincare/src/right_square_bracket_layout.o
 CXX     poincare/src/rightwards_arrow_expression.o
 CXX     poincare/src/round.o
 CXX     poincare/src/sequence.o
-CXX     poincare/src/sequence_layout.o
 CXX     poincare/src/serialization_helper.o
+CXX     poincare/src/sequence_layout.o
 CXX     poincare/src/sign_function.o
 CXX     poincare/src/sine.o
 CXX     poincare/src/solver.o
@@ -1049,13 +1049,13 @@ CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
+CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
+CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
+CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
-CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
-CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
-CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
 CXX     python/port/mod/os/modos.o
 CC      python/port/mod/os/modos_table.o
@@ -1067,8 +1067,6 @@ CXX     python/port/mod/turtle/turtle.o
 CC      python/port/mphalport.o
 CXX     python/port/port.o
 CC      python/port/stackctrl.o
-CC      python/src/extmod/modurandom.o
-CC      python/src/py/argcheck.o
 python/port/stackctrl.c: In function 'mp_stack_ctrl_init':
 python/port/stackctrl.c:35:32: warning: storing the address of local variable 'stack_dummy' in 'mp_state_ctx.thread.stack_top' [-Wdangling-pointer=]
    35 |     MP_STATE_THREAD(stack_top) = (char*)&stack_dummy;
@@ -1079,6 +1077,8 @@ In file included from python/port/stackctrl.c:27:
 python/src/py/mpstate.h:323:23: note: 'mp_state_ctx' declared here
   323 | extern mp_state_ctx_t mp_state_ctx;
       |                       ^~~~~~~~~~~~
+CC      python/src/extmod/modurandom.o
+CC      python/src/py/argcheck.o
 CC      python/src/py/asmarm.o
 CC      python/src/py/asmbase.o
 CC      python/src/py/asmthumb.o
@@ -1137,8 +1137,8 @@ CC      python/src/py/objarray.o
 CC      python/src/py/objattrtuple.o
 CC      python/src/py/objbool.o
 CC      python/src/py/objboundmeth.o
-CC      python/src/py/objclosure.o
 CC      python/src/py/objcell.o
+CC      python/src/py/objclosure.o
 CC      python/src/py/objcomplex.o
 CC      python/src/py/objdeque.o
 CC      python/src/py/objdict.o
@@ -1225,7 +1225,7 @@ apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
 OBJCOPY ion/src/device/shared/usb/dfu.bin
 OBJCOPY ion/src/device/shared/usb/dfu.o
 LD      epsilon.onboarding.elf
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
+/usr/lib/gcc/arm-none-eabi/13.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
 Building an internal binary for     output/release/device/n0100/epsilon.onboarding.elf
 Padding output/release/device/n0100/epsilon.onboarding.internal.bin
 rm -rf output/release/device/n0100/binpack

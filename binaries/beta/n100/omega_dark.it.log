@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -41,7 +41,7 @@ output/release/device/n0100/apps/i18n.h:290:3: note: name 'LanguagePT' differs f
 output/release/device/n0100/apps/i18n.h:290:3: note: mismatching definition
   290 |   LanguageIT,
       |   ^
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
+/usr/lib/gcc/arm-none-eabi/13.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
 Building an internal binary for     output/release/device/n0100/epsilon.onboarding.elf
 Padding output/release/device/n0100/epsilon.onboarding.internal.bin
 rm -rf output/release/device/n0100/binpack
@@ -60,7 +60,7 @@ binpack/epsilon.onboarding.internal.bin.sha256
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -80,8 +80,8 @@ CXX     apps/atomic/list_atomic_cell.o
 CXX     apps/atomic/list_controller.o
 CXX     apps/atomic/message_table_cell_with_expression_with_copy.o
 CXX     apps/atomic/table_controller.o
-CXX     apps/backlight_dimming_timer.o
 CXX     apps/atomic/table_lines_view.o
+CXX     apps/backlight_dimming_timer.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -175,8 +175,8 @@ CXX     apps/code/variable_box_empty_controller.o
 CXX     apps/empty_battery_window.o
 CXX     apps/exam_icon.o
 CXX     apps/exam_mode_configuration_non_official.o
-CXX     apps/exam_pop_up_controller.o
 CXX     apps/global_preferences.o
+CXX     apps/exam_pop_up_controller.o
 CXX     apps/graph/graph_icon.o
 CXX     apps/graph/continuous_function_store.o
 CXX     apps/graph/graph/banner_view.o
@@ -288,8 +288,8 @@ CXX     apps/probability/images/focused_binomial_icon.o
 CXX     apps/probability/images/focused_chi_squared_icon.o
 CXX     apps/probability/images/focused_exponential_icon.o
 CXX     apps/probability/images/focused_fisher_icon.o
-CXX     apps/probability/images/focused_geometric_icon.o
 CXX     apps/probability/images/focused_normal_icon.o
+CXX     apps/probability/images/focused_geometric_icon.o
 CXX     apps/probability/images/focused_poisson_icon.o
 CXX     apps/probability/images/focused_student_icon.o
 CXX     apps/probability/images/focused_uniform_icon.o
@@ -301,8 +301,8 @@ CXX     apps/probability/images/uniform_icon.o
 CXX     apps/probability/distribution_curve_view.o
 CXX     apps/probability/image_cell.o
 CXX     apps/probability/parameters_controller.o
-CXX     apps/probability/responder_image_cell.o
 CXX     apps/regression/regression_icon.o
+CXX     apps/probability/responder_image_cell.o
 CXX     apps/regression/banner_view.o
 CXX     apps/regression/calculation_controller.o
 CXX     apps/regression/column_title_cell.o
@@ -351,8 +351,6 @@ apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
 CXX     apps/sequence/graph/curve_parameter_controller.o
 CXX     apps/sequence/graph/curve_view_range.o
 CXX     apps/sequence/graph/go_to_parameter_controller.o
-CXX     apps/sequence/graph/graph_controller.o
-CXX     apps/sequence/graph/graph_view.o
 In file included from apps/rpn/rpn_toolbox.h:6,
                  from apps/rpn/rpn_toolbox.cpp:1:
 ./apps/math_toolbox.h:12:8: warning: 'virtual bool MathToolbox::selectLeaf(int, bool)' was hidden [-Woverloaded-virtual=]
@@ -372,8 +370,8 @@ In file included from apps/rpn/app.h:11:
 apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
-CXX     apps/sequence/graph/term_sum_controller.o
-CXX     apps/sequence/list/list_controller.o
+CXX     apps/sequence/graph/graph_controller.o
+CXX     apps/sequence/graph/graph_view.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(Poincare::ExpressionNode::Type, Poincare::Context*)':
 apps/rpn/rpn_stack.cpp:140:35: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
   140 |       return doOperation(std::move(poincareOperators[i].op(*this)), *context, poincareOperators[i].nargs);
@@ -384,13 +382,15 @@ apps/rpn/rpn_stack.cpp:161:35: warning: moving a temporary object prevents copy 
   161 |       return doOperation(std::move(specialOperators[i].op(*this)), *context, specialOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:161:35: note: remove 'std::move' call
-CXX     apps/sequence/list/list_parameter_controller.o
-CXX     apps/sequence/list/sequence_toolbox.o
 apps/rpn/rpn_stack.cpp: In member function 'I18n::Message Rpn::Stack::operator()(I18n::Message, Poincare::Context*)':
 apps/rpn/rpn_stack.cpp:257:35: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
   257 |       return doOperation(std::move(messageOperators[i].op(*this)), *context, messageOperators[i].nargs);
       |                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apps/rpn/rpn_stack.cpp:257:35: note: remove 'std::move' call
+CXX     apps/sequence/graph/term_sum_controller.o
+CXX     apps/sequence/list/list_controller.o
+CXX     apps/sequence/list/list_parameter_controller.o
+CXX     apps/sequence/list/sequence_toolbox.o
 CXX     apps/sequence/list/type_parameter_controller.o
 CXX     apps/sequence/values/interval_parameter_controller.o
 CXX     apps/sequence/values/values_controller.o
@@ -402,11 +402,11 @@ CXX     apps/settings/sub_menu/about_controller.o
 CXX     apps/settings/sub_menu/about_controller_non_official.o
 CXX     apps/settings/sub_menu/accessibility_controller.o
 CXX     apps/settings/sub_menu/brightness_controller.o
+CXX     apps/settings/sub_menu/code_options_controller.o
 apps/settings/sub_menu/about_controller_non_official.cpp: In member function 'virtual void Settings::AboutController::viewWillAppear()':
 apps/settings/sub_menu/about_controller_non_official.cpp:10:17: warning: unused variable 'cautionMessages' [-Wunused-variable]
    10 |   I18n::Message cautionMessages[] = {I18n::Message::AboutWarning1, I18n::Message::AboutWarning2, I18n::Message::AboutWarning3, I18n::Message::AboutWarning4};
       |                 ^~~~~~~~~~~~~~~
-CXX     apps/settings/sub_menu/code_options_controller.o
 CXX     apps/settings/sub_menu/contributors_controller.o
 CXX     apps/settings/sub_menu/datetime_controller.o
 CXX     apps/settings/sub_menu/display_mode_controller.o
@@ -416,11 +416,11 @@ CXX     apps/settings/sub_menu/external_controller.o
 CXX     apps/settings/sub_menu/generic_sub_controller.o
 CXX     apps/settings/sub_menu/localization_controller.o
 CXX     apps/settings/sub_menu/math_options_controller.o
-CXX     apps/settings/sub_menu/preferences_controller.o
 apps/settings/sub_menu/exam_mode_controller.cpp: In member function 'virtual void Settings::ExamModeController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/settings/sub_menu/exam_mode_controller.cpp:86:17: warning: unused variable 'preferences' [-Wunused-variable]
    86 |   Preferences * preferences = Preferences::sharedPreferences();
       |                 ^~~~~~~~~~~
+CXX     apps/settings/sub_menu/preferences_controller.o
 CXX     apps/settings/sub_menu/selectable_view_with_messages.o
 CXX     apps/shared/banner_view.o
 CXX     apps/shared/buffer_function_title_cell.o
@@ -485,11 +485,11 @@ CXX     apps/shared/range_parameter_controller.o
 CXX     apps/shared/regular_table_view_data_source.o
 CXX     apps/shared/round_cursor_view.o
 CXX     apps/shared/scrollable_multiple_expressions_view.o
-CXX     apps/shared/scrollable_two_expressions_cell.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CXX     apps/shared/scrollable_two_expressions_cell.o
 CXX     apps/shared/separable.o
 CXX     apps/shared/separator_even_odd_buffer_text_cell.o
 CXX     apps/shared/sequence.o
@@ -586,8 +586,8 @@ CXX     escher/src/image_view.o
 CXX     escher/src/input_event_handler.o
 CXX     escher/src/input_view_controller.o
 CXX     escher/src/invocation.o
-CXX     escher/src/key_view.o
 CXX     escher/src/layout_field.o
+CXX     escher/src/key_view.o
 CXX     escher/src/list_view_data_source.o
 CXX     escher/src/message_table_cell.o
 CXX     escher/src/message_table_cell_with_buffer.o
@@ -627,8 +627,8 @@ CXX     escher/src/tab_view.o
 CXX     escher/src/tab_view_cell.o
 CXX     escher/src/tab_view_controller.o
 CXX     escher/src/tab_view_data_source.o
-CXX     escher/src/table_cell.o
 CXX     escher/src/table_view.o
+CXX     escher/src/table_cell.o
 CXX     escher/src/table_view_data_source.o
 CXX     escher/src/text_area.o
 CXX     escher/src/text_cursor_view.o
@@ -638,11 +638,11 @@ CXX     escher/src/text_input_helpers.o
 CXX     escher/src/text_view.o
 CXX     escher/src/tiled_view.o
 CXX     escher/src/timer.o
+CXX     escher/src/toggleable_dot_view.o
 escher/src/timer.cpp: In member function 'void Timer::reset(uint32_t)':
 escher/src/timer.cpp:20:16: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'unsigned int'} and 'int' [-Wsign-compare]
    20 |   if(NewPeriod != -1){
       |      ~~~~~~~~~~^~~~~
-CXX     escher/src/toggleable_dot_view.o
 CXX     escher/src/toggleable_view.o
 CXX     escher/src/toolbox.o
 CXX     escher/src/transparent_view.o
@@ -742,11 +742,11 @@ CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
 CXX     ion/src/shared/rtc.o
+CXX     ion/src/shared/stack_position.o
 ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
 ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
   231 |     const char * name = fullNameOfRecordStarting(p);
       |                  ^~~~
-CXX     ion/src/shared/stack_position.o
 CXX     ion/src/shared/storage.o
 CXX     ion/src/shared/unicode/utf8_decoder.o
 CXX     ion/src/shared/unicode/utf8_helper.o
@@ -782,8 +782,8 @@ CC      liba/src/external/openbsd/b_exp__D.o
 CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/b_tgamma.o
 CC      liba/src/external/openbsd/e_acos.o
-CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acosf.o
+CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acoshf.o
 CC      liba/src/external/openbsd/e_asin.o
 CC      liba/src/external/openbsd/e_asinf.o
@@ -795,8 +795,8 @@ CC      liba/src/external/openbsd/e_cosh.o
 CC      liba/src/external/openbsd/e_coshf.o
 CC      liba/src/external/openbsd/e_exp.o
 CC      liba/src/external/openbsd/e_expf.o
-CC      liba/src/external/openbsd/e_fmod.o
 CC      liba/src/external/openbsd/e_fmodf.o
+CC      liba/src/external/openbsd/e_fmod.o
 CC      liba/src/external/openbsd/e_hypot.o
 CC      liba/src/external/openbsd/e_hypotf.o
 CC      liba/src/external/openbsd/e_lgamma_r.o
@@ -817,11 +817,11 @@ CC      liba/src/external/openbsd/e_sqrt.o
 CC      liba/src/external/openbsd/e_sqrtf.o
 CC      liba/src/external/openbsd/k_cos.o
 CC      liba/src/external/openbsd/k_cosf.o
-CC      liba/src/external/openbsd/k_rem_pio2f.o
 CC      liba/src/external/openbsd/k_rem_pio2.o
+CC      liba/src/external/openbsd/k_rem_pio2f.o
 CC      liba/src/external/openbsd/k_sin.o
-CC      liba/src/external/openbsd/k_sinf.o
 CC      liba/src/external/openbsd/k_tan.o
+CC      liba/src/external/openbsd/k_sinf.o
 CC      liba/src/external/openbsd/k_tanf.o
 CC      liba/src/external/openbsd/s_asinh.o
 CC      liba/src/external/openbsd/s_asinhf.o
@@ -830,8 +830,8 @@ CC      liba/src/external/openbsd/s_atanf.o
 CC      liba/src/external/openbsd/s_ceil.o
 CC      liba/src/external/openbsd/s_ceilf.o
 CC      liba/src/external/openbsd/s_copysign.o
-CC      liba/src/external/openbsd/s_cos.o
 CC      liba/src/external/openbsd/s_copysignf.o
+CC      liba/src/external/openbsd/s_cos.o
 CC      liba/src/external/openbsd/s_cosf.o
 CC      liba/src/external/openbsd/s_erf.o
 CC      liba/src/external/openbsd/s_erff.o
@@ -843,8 +843,8 @@ CC      liba/src/external/openbsd/s_floor.o
 CC      liba/src/external/openbsd/s_floorf.o
 CC      liba/src/external/openbsd/s_fmax.o
 CC      liba/src/external/openbsd/s_fmaxf.o
-CC      liba/src/external/openbsd/s_frexp.o
 CC      liba/src/external/openbsd/s_frexpf.o
+CC      liba/src/external/openbsd/s_frexp.o
 CC      liba/src/external/openbsd/s_log1p.o
 CC      liba/src/external/openbsd/s_log1pf.o
 CC      liba/src/external/openbsd/s_logb.o
@@ -855,8 +855,8 @@ CC      liba/src/external/openbsd/s_nextafter.o
 CC      liba/src/external/openbsd/s_nextafterf.o
 CC      liba/src/external/openbsd/s_rint.o
 CC      liba/src/external/openbsd/s_round.o
-CC      liba/src/external/openbsd/s_roundf.o
 CC      liba/src/external/openbsd/s_scalbn.o
+CC      liba/src/external/openbsd/s_roundf.o
 CC      liba/src/external/openbsd/s_scalbnf.o
 CC      liba/src/external/openbsd/s_signgam.o
 CC      liba/src/external/openbsd/s_sin.o
@@ -883,8 +883,8 @@ CC      liba/src/strchr.o
 CC      liba/src/strcmp.o
 CC      liba/src/strlcat.o
 CXX     libaxx/include/external/libcxx/complex.o
-CXX     libaxx/src/cxxabi/atexit.o
 CXX     libaxx/src/new.o
+CXX     libaxx/src/cxxabi/atexit.o
 CXX     poincare/src/absolute_value.o
 CXX     poincare/src/addition.o
 CXX     poincare/src/approximation_helper.o
@@ -903,8 +903,8 @@ CXX     poincare/src/binomial_distribution_function.o
 CXX     poincare/src/bracket_layout.o
 CXX     poincare/src/bracket_pair_layout.o
 CXX     poincare/src/ceiling.o
-CXX     poincare/src/code_point_layout.o
 CXX     poincare/src/complex.o
+CXX     poincare/src/code_point_layout.o
 CXX     poincare/src/complex_argument.o
 CXX     poincare/src/complex_cartesian.o
 CXX     poincare/src/condensed_sum_layout.o
@@ -1019,8 +1019,8 @@ CXX     poincare/src/store.o
 CXX     poincare/src/subtraction.o
 CXX     poincare/src/sum.o
 CXX     poincare/src/sum_and_product.o
-CXX     poincare/src/symbol.o
 CXX     poincare/src/sum_layout.o
+CXX     poincare/src/symbol.o
 CXX     poincare/src/symbol_abstract.o
 CXX     poincare/src/tangent.o
 CXX     poincare/src/tree_handle.o
@@ -1039,8 +1039,8 @@ CXX     poincare/src/vector_layout.o
 CXX     poincare/src/vector_norm.o
 CXX     poincare/src/vertical_offset_layout.o
 CXX     poincare/src/zoom.o
-CXX     python/port/helpers.o
 CC      python/port/builtins.o
+CXX     python/port/helpers.o
 CXX     python/port/mod/ion/file.o
 CXX     python/port/mod/ion/modion.o
 CXX     python/port/mod/ion/modion_table.o
@@ -1048,14 +1048,14 @@ CXX     python/port/mod/kandinsky/modkandinsky.o
 CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
-python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
-python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
-  158 |   for(int i=0; i<itemLength; i++) {
-      |                ~^~~~~~~~~~~
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
 CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
 CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
+python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
+python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
+  158 |   for(int i=0; i<itemLength; i++) {
+      |                ~^~~~~~~~~~~
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
 CXX     python/port/mod/os/modos.o
 CC      python/port/mod/os/modos_table.o
@@ -1068,6 +1068,7 @@ CC      python/port/mphalport.o
 CXX     python/port/port.o
 CC      python/port/stackctrl.o
 CC      python/src/extmod/modurandom.o
+CC      python/src/py/asmarm.o
 CC      python/src/py/argcheck.o
 python/port/stackctrl.c: In function 'mp_stack_ctrl_init':
 python/port/stackctrl.c:35:32: warning: storing the address of local variable 'stack_dummy' in 'mp_state_ctx.thread.stack_top' [-Wdangling-pointer=]
@@ -1079,7 +1080,6 @@ In file included from python/port/stackctrl.c:27:
 python/src/py/mpstate.h:323:23: note: 'mp_state_ctx' declared here
   323 | extern mp_state_ctx_t mp_state_ctx;
       |                       ^~~~~~~~~~~~
-CC      python/src/py/asmarm.o
 CC      python/src/py/asmbase.o
 CC      python/src/py/asmthumb.o
 CC      python/src/py/asmx64.o
@@ -1186,8 +1186,8 @@ CC      python/src/py/ringbuf.o
 CC      python/src/py/runtime.o
 CC      python/src/py/runtime_utils.o
 CC      python/src/py/scheduler.o
-CC      python/src/py/sequence.o
 CC      python/src/py/scope.o
+CC      python/src/py/sequence.o
 CC      python/src/py/showbc.o
 CC      python/src/py/smallint.o
 CC      python/src/py/stream.o
@@ -1225,7 +1225,7 @@ apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
 OBJCOPY ion/src/device/shared/usb/dfu.bin
 OBJCOPY ion/src/device/shared/usb/dfu.o
 LD      epsilon.onboarding.elf
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
+/usr/lib/gcc/arm-none-eabi/13.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
 Building an internal binary for     output/release/device/n0100/epsilon.onboarding.elf
 Padding output/release/device/n0100/epsilon.onboarding.internal.bin
 rm -rf output/release/device/n0100/binpack

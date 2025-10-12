@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -15,41 +15,20 @@ Makefile:17: reader app included, removing it on n0100.
 Makefile:25: Removing uLab on n0100. 
 Makefile:53: HOME_DISPLAY_EXTERNALS is set but external isn't included, ignoring flag.
 CXX     ion/src/device/n0100/drivers/cache.o
-I18N    apps/i18n.cpp
 APPS_LAYOUTapps/home/apps_layout.cpp
+I18N    apps/i18n.cpp
 QSTRDAT python/port/genhdr/qstrdefs.generated.h
 THEME   escher/palette.h
 HOSTCC  escher/image/inliner
 CXX     ion/src/device/shared/usb/boot.o
 HOSTCC  kandinsky/fonts/rasterizer
-Traceback (most recent call last):
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 25, in check_git_remote
-    output = subprocess.check_output(["git", "ls-remote", remote_url], env=dict(os.environ, GIT_ASKPASS="/bin/true"), stderr=subprocess.PIPE)
-  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
-    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-               **kwargs).stdout
-               ^^^^^^^^^
-  File "/usr/lib/python3.13/subprocess.py", line 577, in run
-    raise CalledProcessError(retcode, process.args,
-                             output=stdout, stderr=stderr)
-subprocess.CalledProcessError: Command '['git', 'ls-remote', 'https://github.com/Syycorax/Omega-cursed']' returned non-zero exit status 128.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 227, in <module>
-    main(args)
-    ~~~~^^^^^^
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 208, in main
-    if (check_git_remote(args.repo)):
-        ~~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 28, in check_git_remote
-    print("ERROR: Invalid remote " + remote_url + "!", file=os.stderr)
-                                                            ^^^^^^^^^
-AttributeError: module 'os' has no attribute 'stderr'
-make: *** [escher/Makefile:13: output/release/device/n0100/escher/palette.h] Error 1
-make: *** Waiting for unfinished jobs....
+Cloning https://github.com/Syycorax/Omega-cursed into /home/neo/Documents/Code/Upsilon/themes/themes/git/Omega-cursed...
+RASTER  kandinsky/fonts/ItalicSmallFontExtended.cpp
+RASTER  kandinsky/fonts/ItalicLargeFontExtended.cpp
+RASTER  kandinsky/fonts/LargeFontExtended.cpp
+RASTER  kandinsky/fonts/SmallFontExtended.cpp
+ERROR: Theme cursed_light doesn't exist!
+make: *** [escher/Makefile:13: output/release/device/n0100/escher/palette.h] Error 3
 [91m[36m         __  __      ______ ____   ____   _____
 [91m[36m        / / / /_____/ ,____/_/ /  / __ \/'_   /
 [91m[36m       / / / / __ '/ /____/ / /  / / / / / / / 
@@ -59,7 +38,7 @@ make: *** Waiting for unfinished jobs....
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -67,34 +46,6 @@ Makefile:17: reader app included, removing it on n0100.
 Makefile:25: Removing uLab on n0100. 
 Makefile:53: HOME_DISPLAY_EXTERNALS is set but external isn't included, ignoring flag.
 THEME   escher/palette.h
-RASTER  kandinsky/fonts/ItalicLargeFontExtended.cpp
-RASTER  kandinsky/fonts/ItalicSmallFontExtended.cpp
-RASTER  kandinsky/fonts/LargeFontExtended.cpp
-RASTER  kandinsky/fonts/SmallFontExtended.cpp
-Traceback (most recent call last):
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 25, in check_git_remote
-    output = subprocess.check_output(["git", "ls-remote", remote_url], env=dict(os.environ, GIT_ASKPASS="/bin/true"), stderr=subprocess.PIPE)
-  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
-    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-               **kwargs).stdout
-               ^^^^^^^^^
-  File "/usr/lib/python3.13/subprocess.py", line 577, in run
-    raise CalledProcessError(retcode, process.args,
-                             output=stdout, stderr=stderr)
-subprocess.CalledProcessError: Command '['git', 'ls-remote', 'https://github.com/Syycorax/Omega-cursed']' returned non-zero exit status 128.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 227, in <module>
-    main(args)
-    ~~~~^^^^^^
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 208, in main
-    if (check_git_remote(args.repo)):
-        ~~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/home/neo/Documents/Code/Upsilon/themes/themes_manager.py", line 28, in check_git_remote
-    print("ERROR: Invalid remote " + remote_url + "!", file=os.stderr)
-                                                            ^^^^^^^^^
-AttributeError: module 'os' has no attribute 'stderr'
-make: *** [escher/Makefile:13: output/release/device/n0100/escher/palette.h] Error 1
+Cloning https://github.com/Syycorax/Omega-cursed into /home/neo/Documents/Code/Upsilon/themes/themes/git/Omega-cursed...
+ERROR: Theme cursed_light doesn't exist!
+make: *** [escher/Makefile:13: output/release/device/n0100/escher/palette.h] Error 3

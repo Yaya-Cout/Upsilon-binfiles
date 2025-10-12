@@ -7,7 +7,7 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -41,7 +41,7 @@ output/release/device/n0100/apps/i18n.h:290:3: note: name 'LanguageNL' differs f
 output/release/device/n0100/apps/i18n.h:290:3: note: mismatching definition
   290 |   LanguagePT,
       |   ^
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
+/usr/lib/gcc/arm-none-eabi/13.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
 Building an internal binary for     output/release/device/n0100/epsilon.onboarding.elf
 Padding output/release/device/n0100/epsilon.onboarding.internal.bin
 rm -rf output/release/device/n0100/binpack
@@ -60,7 +60,7 @@ binpack/epsilon.onboarding.internal.bin.sha256
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0100
 [32m    Building on Linux amd64
 [0m[39m
@@ -81,7 +81,6 @@ CXX     apps/atomic/list_controller.o
 CXX     apps/atomic/message_table_cell_with_expression_with_copy.o
 CXX     apps/atomic/table_controller.o
 CXX     apps/atomic/table_lines_view.o
-CXX     apps/backlight_dimming_timer.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -96,6 +95,7 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/backlight_dimming_timer.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -116,11 +116,11 @@ CXX     apps/calculation/additional_outputs/complex_graph_cell.o
 CXX     apps/calculation/additional_outputs/complex_list_controller.o
 CXX     apps/calculation/additional_outputs/complex_model.o
 CXX     apps/calculation/additional_outputs/expression_with_equal_sign_view.o
+CXX     apps/calculation/additional_outputs/expressions_list_controller.o
 apps/atomic/list_controller.cpp: In member function 'virtual int Atomic::ListController::reusableCellCount(int)':
 apps/atomic/list_controller.cpp:116:5: warning: control reaches end of non-void function [-Wreturn-type]
   116 |     default:
       |     ^~~~~~~
-CXX     apps/calculation/additional_outputs/expressions_list_controller.o
 CXX     apps/calculation/additional_outputs/illustrated_list_controller.o
 CXX     apps/calculation/additional_outputs/illustration_cell.o
 CXX     apps/calculation/additional_outputs/integer_list_controller.o
@@ -238,7 +238,6 @@ CXX     apps/on_boarding/power_on_self_test.o
 CXX     apps/on_boarding/prompt_controller.o
 CXX     apps/probability/probability_icon.o
 CXX     apps/probability/calculation/calculation.o
-CXX     apps/probability/calculation/discrete_calculation.o
 In file included from ./apps/calculation/../shared/../apps_container.h:10,
                  from ./apps/calculation/../shared/text_field_delegate_app.h:8,
                  from ./apps/calculation/../shared/text_field_delegate.h:4,
@@ -253,6 +252,7 @@ In file included from ./apps/rpn/app.h:11,
 ./apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
    17 |   bool selectLeaf(int selectedRow);
       |        ^~~~~~~~~~
+CXX     apps/probability/calculation/discrete_calculation.o
 CXX     apps/probability/calculation/finite_integral_calculation.o
 CXX     apps/probability/calculation/left_integral_calculation.o
 CXX     apps/probability/calculation/right_integral_calculation.o
@@ -262,8 +262,8 @@ CXX     apps/probability/images/calcul2_icon.o
 CXX     apps/probability/images/calcul3_icon.o
 CXX     apps/probability/images/calcul4_icon.o
 CXX     apps/probability/images/focused_calcul1_icon.o
-CXX     apps/probability/images/focused_calcul2_icon.o
 CXX     apps/probability/images/focused_calcul3_icon.o
+CXX     apps/probability/images/focused_calcul2_icon.o
 CXX     apps/probability/images/focused_calcul4_icon.o
 CXX     apps/probability/cell.o
 CXX     apps/probability/distribution/binomial_distribution.o
@@ -430,8 +430,8 @@ CXX     apps/shared/color_cell.o
 CXX     apps/shared/color_parameter_controller.o
 CXX     apps/shared/continuous_function.o
 CXX     apps/shared/continuous_function_cache.o
-CXX     apps/shared/cursor_view.o
 CXX     apps/shared/curve_view.o
+CXX     apps/shared/cursor_view.o
 CXX     apps/shared/curve_view_cursor.o
 CXX     apps/shared/curve_view_range.o
 CXX     apps/shared/discard_pop_up_controller.o
@@ -485,11 +485,11 @@ CXX     apps/shared/range_parameter_controller.o
 CXX     apps/shared/regular_table_view_data_source.o
 CXX     apps/shared/round_cursor_view.o
 CXX     apps/shared/scrollable_multiple_expressions_view.o
-CXX     apps/shared/scrollable_two_expressions_cell.o
 apps/shared/list_parameter_controller.cpp: In member function 'virtual void Shared::ListParameterController::willDisplayCellForIndex(HighlightCell*, int)':
 apps/shared/list_parameter_controller.cpp:44:22: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
    44 |     for(int i = 0; i < Palette::numberOfDataColors(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CXX     apps/shared/scrollable_two_expressions_cell.o
 CXX     apps/shared/separable.o
 CXX     apps/shared/separator_even_odd_buffer_text_cell.o
 CXX     apps/shared/sequence.o
@@ -617,8 +617,8 @@ CXX     escher/src/scrollable_expression_view.o
 CXX     escher/src/scrollable_view.o
 CXX     escher/src/selectable_table_view.o
 CXX     escher/src/simple_list_view_data_source.o
-CXX     escher/src/slideable_message_text_view.o
 CXX     escher/src/simple_table_view_data_source.o
+CXX     escher/src/slideable_message_text_view.o
 CXX     escher/src/solid_color_view.o
 CXX     escher/src/stack_view.o
 CXX     escher/src/stack_view_controller.o
@@ -638,11 +638,11 @@ CXX     escher/src/text_input_helpers.o
 CXX     escher/src/text_view.o
 CXX     escher/src/tiled_view.o
 CXX     escher/src/timer.o
-CXX     escher/src/toggleable_dot_view.o
 escher/src/timer.cpp: In member function 'void Timer::reset(uint32_t)':
 escher/src/timer.cpp:20:16: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'unsigned int'} and 'int' [-Wsign-compare]
    20 |   if(NewPeriod != -1){
       |      ~~~~~~~~~~^~~~~
+CXX     escher/src/toggleable_dot_view.o
 CXX     escher/src/toggleable_view.o
 CXX     escher/src/toolbox.o
 CXX     escher/src/transparent_view.o
@@ -659,13 +659,13 @@ CXX     ion/src/device/n0100/drivers/reset.o
 CXX     ion/src/device/n0100/drivers/usb.o
 CXX     ion/src/device/n0100/platform_info.o
 CC      ion/src/device/shared/boot/isr.o
+CXX     ion/src/device/shared/drivers/backlight.o
 <command-line>: warning: "EPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: "OMEGA_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: "UPSILON_VERSION" redefined
 <command-line>: note: this is the location of the previous definition
-CXX     ion/src/device/shared/drivers/backlight.o
 CXX     ion/src/device/shared/drivers/base64.o
 ion/src/device/n0100/boot/rt0.cpp:122:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
   122 | void __attribute__((interrupt, noinline)) isr_systick() {
@@ -709,8 +709,8 @@ CXX     ion/src/device/shared/usb/stack/descriptor/descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/device_capability_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/device_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/dfu_functional_descriptor.o
-CXX     ion/src/device/shared/usb/stack/descriptor/extended_compat_id_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/interface_descriptor.o
+CXX     ion/src/device/shared/usb/stack/descriptor/extended_compat_id_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/language_id_string_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/microsoft_os_string_descriptor.o
 CXX     ion/src/device/shared/usb/stack/descriptor/platform_device_capability_descriptor.o
@@ -742,11 +742,11 @@ CXX     ion/src/shared/events_modifier.o
 CXX     ion/src/shared/internal_storage.o
 CXX     ion/src/shared/keyboard/layout_B2/layout_events.o
 CXX     ion/src/shared/rtc.o
+CXX     ion/src/shared/stack_position.o
 ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
 ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
   231 |     const char * name = fullNameOfRecordStarting(p);
       |                  ^~~~
-CXX     ion/src/shared/stack_position.o
 CXX     ion/src/shared/storage.o
 CXX     ion/src/shared/unicode/utf8_decoder.o
 CXX     ion/src/shared/unicode/utf8_helper.o
@@ -782,8 +782,8 @@ CC      liba/src/external/openbsd/b_exp__D.o
 CC      liba/src/external/openbsd/b_log__D.o
 CC      liba/src/external/openbsd/b_tgamma.o
 CC      liba/src/external/openbsd/e_acos.o
-CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acosf.o
+CC      liba/src/external/openbsd/e_acosh.o
 CC      liba/src/external/openbsd/e_acoshf.o
 CC      liba/src/external/openbsd/e_asin.o
 CC      liba/src/external/openbsd/e_asinf.o
@@ -791,8 +791,8 @@ CC      liba/src/external/openbsd/e_atan2.o
 CC      liba/src/external/openbsd/e_atan2f.o
 CC      liba/src/external/openbsd/e_atanh.o
 CC      liba/src/external/openbsd/e_atanhf.o
-CC      liba/src/external/openbsd/e_coshf.o
 CC      liba/src/external/openbsd/e_cosh.o
+CC      liba/src/external/openbsd/e_coshf.o
 CC      liba/src/external/openbsd/e_exp.o
 CC      liba/src/external/openbsd/e_expf.o
 CC      liba/src/external/openbsd/e_fmod.o
@@ -801,8 +801,8 @@ CC      liba/src/external/openbsd/e_hypot.o
 CC      liba/src/external/openbsd/e_hypotf.o
 CC      liba/src/external/openbsd/e_lgamma_r.o
 CC      liba/src/external/openbsd/e_lgammaf_r.o
-CC      liba/src/external/openbsd/e_log.o
 CC      liba/src/external/openbsd/e_log10.o
+CC      liba/src/external/openbsd/e_log.o
 CC      liba/src/external/openbsd/e_log10f.o
 CC      liba/src/external/openbsd/e_log2.o
 CC      liba/src/external/openbsd/e_logf.o
@@ -818,12 +818,12 @@ CC      liba/src/external/openbsd/e_sqrtf.o
 CC      liba/src/external/openbsd/k_cos.o
 CC      liba/src/external/openbsd/k_cosf.o
 CC      liba/src/external/openbsd/k_rem_pio2.o
-CC      liba/src/external/openbsd/k_sin.o
 CC      liba/src/external/openbsd/k_rem_pio2f.o
+CC      liba/src/external/openbsd/k_sin.o
 CC      liba/src/external/openbsd/k_sinf.o
 CC      liba/src/external/openbsd/k_tan.o
-CC      liba/src/external/openbsd/k_tanf.o
 CC      liba/src/external/openbsd/s_asinh.o
+CC      liba/src/external/openbsd/k_tanf.o
 CC      liba/src/external/openbsd/s_asinhf.o
 CC      liba/src/external/openbsd/s_atan.o
 CC      liba/src/external/openbsd/s_atanf.o
@@ -846,22 +846,22 @@ CC      liba/src/external/openbsd/s_fmaxf.o
 CC      liba/src/external/openbsd/s_frexp.o
 CC      liba/src/external/openbsd/s_frexpf.o
 CC      liba/src/external/openbsd/s_log1p.o
-CC      liba/src/external/openbsd/s_logb.o
 CC      liba/src/external/openbsd/s_log1pf.o
+CC      liba/src/external/openbsd/s_logb.o
 CC      liba/src/external/openbsd/s_logbf.o
 CC      liba/src/external/openbsd/s_modf.o
 CC      liba/src/external/openbsd/s_modff.o
 CC      liba/src/external/openbsd/s_nextafter.o
 CC      liba/src/external/openbsd/s_nextafterf.o
 CC      liba/src/external/openbsd/s_rint.o
-CC      liba/src/external/openbsd/s_round.o
 CC      liba/src/external/openbsd/s_roundf.o
+CC      liba/src/external/openbsd/s_round.o
 CC      liba/src/external/openbsd/s_scalbn.o
-CC      liba/src/external/openbsd/s_signgam.o
 CC      liba/src/external/openbsd/s_scalbnf.o
+CC      liba/src/external/openbsd/s_signgam.o
 CC      liba/src/external/openbsd/s_sin.o
-CC      liba/src/external/openbsd/s_sinf.o
 CC      liba/src/external/openbsd/s_tan.o
+CC      liba/src/external/openbsd/s_sinf.o
 CC      liba/src/external/openbsd/s_tanf.o
 CC      liba/src/external/openbsd/s_tanh.o
 CC      liba/src/external/openbsd/s_tanhf.o
@@ -890,8 +890,8 @@ CXX     poincare/src/addition.o
 CXX     poincare/src/approximation_helper.o
 CXX     poincare/src/arc_cosine.o
 CXX     poincare/src/arc_sine.o
-CXX     poincare/src/arithmetic.o
 CXX     poincare/src/arc_tangent.o
+CXX     poincare/src/arithmetic.o
 CXX     poincare/src/based_integer.o
 CXX     poincare/src/beta_function.o
 CXX     poincare/src/binom_cdf.o
@@ -905,8 +905,8 @@ CXX     poincare/src/bracket_pair_layout.o
 CXX     poincare/src/ceiling.o
 CXX     poincare/src/code_point_layout.o
 CXX     poincare/src/complex.o
-CXX     poincare/src/complex_cartesian.o
 CXX     poincare/src/complex_argument.o
+CXX     poincare/src/complex_cartesian.o
 CXX     poincare/src/condensed_sum_layout.o
 CXX     poincare/src/confidence_interval.o
 CXX     poincare/src/conjugate.o
@@ -1049,12 +1049,12 @@ CC      python/port/mod/kandinsky/modkandinsky_table.o
 CXX     python/port/mod/matplotlib/modmatplotlib.o
 CC      python/port/mod/matplotlib/modmatplotlib_table.o
 CXX     python/port/mod/matplotlib/pyplot/modpyplot.o
+CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
+CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 python/port/mod/kandinsky/modkandinsky.cpp: In function 'void* modkandinsky_fill_polygon(size_t, void* const*)':
 python/port/mod/kandinsky/modkandinsky.cpp:158:17: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'unsigned int'} [-Wsign-compare]
   158 |   for(int i=0; i<itemLength; i++) {
       |                ~^~~~~~~~~~~
-CC      python/port/mod/matplotlib/pyplot/modpyplot_table.o
-CXX     python/port/mod/matplotlib/pyplot/plot_controller.o
 CXX     python/port/mod/matplotlib/pyplot/plot_store.o
 CXX     python/port/mod/matplotlib/pyplot/plot_view.o
 CXX     python/port/mod/os/modos.o
@@ -1067,6 +1067,7 @@ CXX     python/port/mod/turtle/turtle.o
 CC      python/port/mphalport.o
 CXX     python/port/port.o
 CC      python/port/stackctrl.o
+CC      python/src/extmod/modurandom.o
 python/port/stackctrl.c: In function 'mp_stack_ctrl_init':
 python/port/stackctrl.c:35:32: warning: storing the address of local variable 'stack_dummy' in 'mp_state_ctx.thread.stack_top' [-Wdangling-pointer=]
    35 |     MP_STATE_THREAD(stack_top) = (char*)&stack_dummy;
@@ -1077,7 +1078,6 @@ In file included from python/port/stackctrl.c:27:
 python/src/py/mpstate.h:323:23: note: 'mp_state_ctx' declared here
   323 | extern mp_state_ctx_t mp_state_ctx;
       |                       ^~~~~~~~~~~~
-CC      python/src/extmod/modurandom.o
 CC      python/src/py/argcheck.o
 CC      python/src/py/asmarm.o
 CC      python/src/py/asmbase.o
@@ -1091,8 +1091,8 @@ CC      python/src/py/builtinevex.o
 CC      python/src/py/builtinhelp.o
 CC      python/src/py/builtinimport.o
 CC      python/src/py/compile.o
-CC      python/src/py/emitcommon.o
 CC      python/src/py/emitbc.o
+CC      python/src/py/emitcommon.o
 CC      python/src/py/emitglue.o
 CC      python/src/py/emitinlinethumb.o
 CC      python/src/py/emitinlinextensa.o
@@ -1112,8 +1112,8 @@ CC      python/src/py/modarray.o
 CC      python/src/py/modbuiltins.o
 CC      python/src/py/modcmath.o
 CC      python/src/py/modcollections.o
-CC      python/src/py/modgc.o
 CC      python/src/py/modio.o
+CC      python/src/py/modgc.o
 CC      python/src/py/modmath.o
 CC      python/src/py/modmicropython.o
 CC      python/src/py/modstruct.o
@@ -1129,8 +1129,8 @@ CC      python/src/py/nlraarch64.o
 CC      python/src/py/nlrpowerpc.o
 CC      python/src/py/nlrsetjmp.o
 CC      python/src/py/nlrthumb.o
-CC      python/src/py/nlrx86.o
 CC      python/src/py/nlrx64.o
+CC      python/src/py/nlrx86.o
 CC      python/src/py/nlrxtensa.o
 CC      python/src/py/obj.o
 CC      python/src/py/objarray.o
@@ -1153,8 +1153,8 @@ CC      python/src/py/objint.o
 CC      python/src/py/objint_longlong.o
 CC      python/src/py/objint_mpz.o
 CC      python/src/py/objlist.o
-CC      python/src/py/objmodule.o
 CC      python/src/py/objmap.o
+CC      python/src/py/objmodule.o
 CC      python/src/py/objnamedtuple.o
 CC      python/src/py/objnone.o
 CC      python/src/py/objobject.o
@@ -1183,8 +1183,8 @@ CC      python/src/py/qstr.o
 CC      python/src/py/reader.o
 CC      python/src/py/repl.o
 CC      python/src/py/ringbuf.o
-CC      python/src/py/runtime_utils.o
 CC      python/src/py/runtime.o
+CC      python/src/py/runtime_utils.o
 CC      python/src/py/scheduler.o
 CC      python/src/py/scope.o
 CC      python/src/py/sequence.o
@@ -1194,13 +1194,13 @@ CC      python/src/py/stream.o
 CC      python/src/py/unicode.o
 CC      python/src/py/vm.o
 CC      python/src/py/vstr.o
-CC      python/src/py/warning.o
 CXX     apps/atomic/app.o
+CC      python/src/py/warning.o
 CXX     apps/calculation/app.o
 CXX     apps/code/app.o
 CXX     apps/graph/app.o
-CXX     apps/probability/app.o
 CXX     apps/on_boarding/logo_view.o
+CXX     apps/probability/app.o
 CXX     apps/probability/calculation_controller.o
 CXX     apps/probability/calculation_type_controller.o
 CXX     apps/probability/distribution_controller.o
@@ -1225,7 +1225,7 @@ apps/rpn/rpn_toolbox.h:17:8: note:   by 'bool Rpn::Toolbox::selectLeaf(int)'
 OBJCOPY ion/src/device/shared/usb/dfu.bin
 OBJCOPY ion/src/device/shared/usb/dfu.o
 LD      epsilon.onboarding.elf
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
+/usr/lib/gcc/arm-none-eabi/13.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0100/epsilon.onboarding.elf has a LOAD segment with RWX permissions
 Building an internal binary for     output/release/device/n0100/epsilon.onboarding.elf
 Padding output/release/device/n0100/epsilon.onboarding.internal.bin
 rm -rf output/release/device/n0100/binpack

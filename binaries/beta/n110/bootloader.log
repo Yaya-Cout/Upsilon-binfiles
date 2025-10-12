@@ -7,23 +7,46 @@
 [91m[36m         /_/                                   
 [0;34m          - When Epsiloff and Omegout          [0m
 
-[32mBuilding U1.1.0-E15.5.0
+[32mBuilding U1.1.2-E15.5.0
 [32m  Targeting Numworks n0110
 [32m    Building on Linux amd64
 [0m[39m
-ICON    bootloader/computer.png
+CXX     bootloader/boot.o
 AS      bootloader/jump_to_firmware.o
-CXX     bootloader/recovery.o
 CXX     bootloader/main.o
+CXX     bootloader/recovery.o
 CXX     bootloader/trampoline.o
 CXX     bootloader/usb_data.o
 CXX     bootloader/utility.o
-THEME   escher/palette.h
-CXX     bootloader/boot.o
-I18N    apps/i18n.cpp
-HOSTCC  escher/image/inliner
-CXX     bootloader/drivers/stm32_drivers.o
-CXX     bootloader/interface/menus/about.o
+In file included from ./bootloader/interface/menus/home.h:4,
+                 from bootloader/boot.cpp:7:
+./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
+./bootloader/interface/src/menu.h:117:20: warning: 'Bootloader::Menu::m_title' will be initialized after [-Wreorder]
+  117 |       const char * m_title;
+      |                    ^~~~~~~
+./bootloader/interface/src/menu.h:116:15: warning:   'KDColor Bootloader::Menu::m_foreground' [-Wreorder]
+  116 |       KDColor m_foreground;
+      |               ^~~~~~~~~~~~
+./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
+   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
+      |       ^~~~
+./bootloader/interface/src/menu.h:122:12: warning: 'Bootloader::Menu::m_forced_exit' will be initialized after [-Wreorder]
+  122 |       bool m_forced_exit;
+      |            ^~~~~~~~~~~~~
+./bootloader/interface/src/menu.h:120:11: warning:   'int Bootloader::Menu::m_margin' [-Wreorder]
+  120 |       int m_margin;
+      |           ^~~~~~~~
+./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
+   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
+      |       ^~~~
+./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
+   16 |         setup();
+      |         ~~~~~^~
+CC      bootloader/boot/isr.o
+CXX     bootloader/boot/rt0.o
+CXX     bootloader/drivers/board.o
+CXX     ion/src/device/bootloader/drivers/usb_desc.o
+CXX     ion/src/device/bootloader/usb/calculator.o
 In file included from ./bootloader/interface/menus/slot_recovery.h:4,
                  from bootloader/recovery.cpp:12:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -52,33 +75,49 @@ bootloader/recovery.cpp: In static member function 'static Bootloader::Recovery:
 bootloader/recovery.cpp:55:8: warning: variable 'isBCrashed' set but not used [-Wunused-but-set-variable]
    55 |   bool isBCrashed = false;
       |        ^~~~~~~~~~
-In file included from ./bootloader/interface/menus/home.h:4,
-                 from bootloader/boot.cpp:7:
-./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
-./bootloader/interface/src/menu.h:117:20: warning: 'Bootloader::Menu::m_title' will be initialized after [-Wreorder]
-  117 |       const char * m_title;
-      |                    ^~~~~~~
-./bootloader/interface/src/menu.h:116:15: warning:   'KDColor Bootloader::Menu::m_foreground' [-Wreorder]
-  116 |       KDColor m_foreground;
-      |               ^~~~~~~~~~~~
-./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
-   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
-      |       ^~~~
-./bootloader/interface/src/menu.h:122:12: warning: 'Bootloader::Menu::m_forced_exit' will be initialized after [-Wreorder]
-  122 |       bool m_forced_exit;
-      |            ^~~~~~~~~~~~~
-./bootloader/interface/src/menu.h:120:11: warning:   'int Bootloader::Menu::m_margin' [-Wreorder]
-  120 |       int m_margin;
-      |           ^~~~~~~~
-./bootloader/interface/src/menu.h:15:7: warning:   when initialized here [-Wreorder]
-   15 |       Menu(KDColor foreground, KDColor background, const char * title, const char * bottom, bool centerY, int margin) : m_columns(), m_defaultColumns(), m_slotColumns(), m_background(background), m_title(title), m_foreground(foreground), m_bottom(bottom), m_centerY(centerY), m_forced_exit(false), m_margin(margin) {
-      |       ^~~~
-./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
-   16 |         setup();
-      |         ~~~~~^~
+CXX     ion/src/device/bootloader/usb/dfu_interface.o
+bootloader/boot.cpp: In static member function 'static void Bootloader::Boot::jumpToInternalBootloader()':
+bootloader/boot.cpp:171:1: warning: 'noreturn' function does return
+  171 | }
+      | ^
+CXX     ion/src/device/bootloader/usb/dfu_xip.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/bos_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/configuration_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/descriptor.o
+ion/src/device/bootloader/usb/dfu_interface.cpp: In member function 'void Ion::Device::USB::DFUInterface::eraseMemoryIfNeeded()':
+ion/src/device/bootloader/usb/dfu_interface.cpp:214:31: warning: variable 'config' set but not used [-Wunused-but-set-variable]
+  214 |   Bootloader::ProtectionState config = getDfuConfig();
+      |                               ^~~~~~
+ion/src/device/bootloader/usb/dfu_interface.cpp: In member function 'void Ion::Device::USB::DFUInterface::writeOnMemory()':
+ion/src/device/bootloader/usb/dfu_interface.cpp:236:33: warning: variable 'config' set but not used [-Wunused-but-set-variable]
+  236 |     Bootloader::ProtectionState config = getDfuConfig();
+      |                                 ^~~~~~
+CXX     ion/src/device/bootloader/usb/stack/descriptor/device_capability_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/device_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/dfu_functional_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/extended_compat_id_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/interface_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/language_id_string_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/microsoft_os_string_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/platform_device_capability_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/string_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/url_descriptor.o
+CXX     ion/src/device/bootloader/usb/stack/descriptor/webusb_platform_descriptor.o
+bootloader/boot/rt0.cpp:34:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
+   34 | void __attribute__((interrupt, noinline)) isr_systick() {
+      |                                                       ^
+CXX     ion/src/device/bootloader/usb/stack/device.o
+CXX     ion/src/device/bootloader/usb/stack/endpoint0.o
+CXX     ion/src/device/bootloader/usb/stack/interface.o
+CXX     ion/src/device/bootloader/usb/stack/request_recipient.o
+CXX     ion/src/device/bootloader/usb/stack/setup_packet.o
+CXX     ion/src/device/bootloader/usb/stack/streamable.o
+CXX     bootloader/drivers/stm32_drivers.o
+CXX     bootloader/interface/menus/about.o
 CXX     bootloader/interface/menus/crash.o
 CXX     bootloader/interface/menus/dfu.o
 CXX     bootloader/interface/menus/home.o
+CXX     bootloader/interface/menus/installer.o
 In file included from bootloader/interface/menus/about.h:4,
                  from bootloader/interface/menus/about.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -103,11 +142,6 @@ In file included from bootloader/interface/menus/about.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-bootloader/boot.cpp: In static member function 'static void Bootloader::Boot::jumpToInternalBootloader()':
-bootloader/boot.cpp:171:1: warning: 'noreturn' function does return
-  171 | }
-      | ^
-CXX     bootloader/interface/menus/installer.o
 In file included from bootloader/interface/menus/crash.h:4,
                  from bootloader/interface/menus/crash.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -156,7 +190,6 @@ In file included from bootloader/interface/menus/dfu.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/interface/menus/slot_recovery.o
 In file included from bootloader/interface/menus/home.h:4,
                  from bootloader/interface/menus/home.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -181,7 +214,6 @@ In file included from bootloader/interface/menus/home.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/interface/menus/upsilon_recovery.o
 In file included from bootloader/interface/menus/installer.h:4,
                  from bootloader/interface/menus/installer.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -206,7 +238,12 @@ In file included from bootloader/interface/menus/installer.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
+CXX     bootloader/interface/menus/slot_recovery.o
+CXX     bootloader/interface/menus/upsilon_recovery.o
 CXX     bootloader/interface/menus/warning.o
+CXX     bootloader/interface/src/menu.o
+CXX     bootloader/interface/static/interface.o
+CXX     bootloader/slots/kernel_header.o
 In file included from bootloader/interface/menus/slot_recovery.h:4,
                  from bootloader/interface/menus/slot_recovery.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -255,7 +292,6 @@ In file included from bootloader/interface/menus/upsilon_recovery.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/interface/src/menu.o
 In file included from bootloader/interface/menus/warning.h:4,
                  from bootloader/interface/menus/warning.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
@@ -280,9 +316,9 @@ In file included from bootloader/interface/menus/warning.h:4,
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/slots/kernel_header.o
 CXX     bootloader/slots/slot.o
 CXX     bootloader/slots/slot_exam_mode.o
+CXX     bootloader/slots/userland_header.o
 In file included from bootloader/interface/src/menu.cpp:1:
 ./bootloader/interface/src/menu.h: In constructor 'Bootloader::Menu::Menu(KDColor, KDColor, const char*, const char*, bool, int)':
 ./bootloader/interface/src/menu.h:117:20: warning: 'Bootloader::Menu::m_title' will be initialized after [-Wreorder]
@@ -306,8 +342,6 @@ In file included from bootloader/interface/src/menu.cpp:1:
 ./bootloader/interface/src/menu.h:16:14: warning: pure virtual 'virtual void Bootloader::Menu::setup()' called from constructor
    16 |         setup();
       |         ~~~~~^~
-CXX     bootloader/slots/userland_header.o
-HOSTCC  kandinsky/fonts/rasterizer
 bootloader/slots/slot_exam_mode.cpp: In static member function 'static uint8_t Bootloader::ExamMode::SlotsExamMode::FetchSlotExamMode(const char*, const char*)':
 bootloader/slots/slot_exam_mode.cpp:47:12: warning: comparison with string literal results in unspecified behavior [-Waddress]
    47 |   if (Slot == "A") {
@@ -318,252 +352,6 @@ bootloader/slots/slot_exam_mode.cpp:64:17: warning: comparison with string liter
 bootloader/slots/slot_exam_mode.cpp:80:19: warning: comparison with string literal results in unspecified behavior [-Waddress]
    80 |   } else if (Slot == "Khi") {
       |              ~~~~~^~~~~~~~
-CC      bootloader/boot/isr.o
-CXX     bootloader/boot/rt0.o
-CXX     bootloader/drivers/board.o
-CXX     ion/src/device/bootloader/drivers/usb_desc.o
-CXX     ion/src/device/bootloader/usb/calculator.o
-CXX     ion/src/device/bootloader/usb/dfu_interface.o
-CXX     ion/src/device/bootloader/usb/dfu_xip.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/bos_descriptor.o
-ion/src/device/bootloader/usb/dfu_interface.cpp: In member function 'void Ion::Device::USB::DFUInterface::eraseMemoryIfNeeded()':
-ion/src/device/bootloader/usb/dfu_interface.cpp:214:31: warning: variable 'config' set but not used [-Wunused-but-set-variable]
-  214 |   Bootloader::ProtectionState config = getDfuConfig();
-      |                               ^~~~~~
-ion/src/device/bootloader/usb/dfu_interface.cpp: In member function 'void Ion::Device::USB::DFUInterface::writeOnMemory()':
-ion/src/device/bootloader/usb/dfu_interface.cpp:236:33: warning: variable 'config' set but not used [-Wunused-but-set-variable]
-  236 |     Bootloader::ProtectionState config = getDfuConfig();
-      |                                 ^~~~~~
-CXX     ion/src/device/bootloader/usb/stack/descriptor/configuration_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/device_capability_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/device_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/dfu_functional_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/extended_compat_id_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/interface_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/language_id_string_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/microsoft_os_string_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/platform_device_capability_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/string_descriptor.o
-bootloader/boot/rt0.cpp:34:55: warning: FP registers might be clobbered despite 'interrupt' attribute: compile with '-mgeneral-regs-only' [-Wattributes]
-   34 | void __attribute__((interrupt, noinline)) isr_systick() {
-      |                                                       ^
-CXX     ion/src/device/bootloader/usb/stack/descriptor/url_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/descriptor/webusb_platform_descriptor.o
-CXX     ion/src/device/bootloader/usb/stack/device.o
-CXX     ion/src/device/bootloader/usb/stack/endpoint0.o
-CXX     ion/src/device/bootloader/usb/stack/interface.o
-CXX     ion/src/device/bootloader/usb/stack/request_recipient.o
-CXX     ion/src/device/bootloader/usb/stack/setup_packet.o
-CXX     ion/src/device/bootloader/usb/stack/streamable.o
-CXX     ion/src/device/n0110/drivers/cache.o
-CXX     ion/src/device/n0110/drivers/external_flash.o
-CXX     ion/src/device/n0110/drivers/led.o
-CXX     ion/src/device/n0110/drivers/power.o
-CXX     ion/src/device/n0110/drivers/reset.o
-CXX     ion/src/device/n0110/drivers/usb.o
-CXX     ion/src/device/shared/drivers/backlight.o
-CXX     ion/src/device/n0110/platform_info.o
-<command-line>: warning: "EPSILON_VERSION" redefined
-<command-line>: note: this is the location of the previous definition
-<command-line>: warning: "OMEGA_VERSION" redefined
-<command-line>: note: this is the location of the previous definition
-<command-line>: warning: "UPSILON_VERSION" redefined
-<command-line>: note: this is the location of the previous definition
-CXX     ion/src/device/shared/drivers/base64.o
-CXX     ion/src/device/shared/drivers/battery.o
-CXX     ion/src/device/shared/drivers/bldata.o
-CXX     ion/src/device/shared/drivers/board.o
-CXX     ion/src/device/shared/drivers/clipboard.o
-CXX     ion/src/device/shared/drivers/console_dummy.o
-CXX     ion/src/device/shared/drivers/crc32.o
-CXX     ion/src/device/shared/drivers/display.o
-ion/src/device/shared/drivers/bldata.cpp: In member function 'Ion::Device::BootloaderSharedData::BootloaderSharedData()':
-ion/src/device/shared/drivers/bldata.cpp:16:9: warning: 'this_4(D)->m_header' is used uninitialized [-Wuninitialized]
-   16 |     if (m_header != Magic) {
-      |         ^~~~~~~~
-CXX     ion/src/device/shared/drivers/events_keyboard_platform.o
-CXX     ion/src/device/shared/drivers/exam_mode.o
-CXX     ion/src/device/shared/drivers/flash.o
-CXX     ion/src/device/shared/drivers/internal_flash.o
-CXX     ion/src/device/shared/drivers/keyboard.o
-CXX     ion/src/device/shared/drivers/led.o
-CXX     ion/src/device/shared/drivers/pcb_version.o
-CXX     ion/src/device/shared/drivers/power.o
-CXX     ion/src/device/shared/drivers/random.o
-CXX     ion/src/device/shared/drivers/reset.o
-CXX     ion/src/device/shared/drivers/rtc.o
-CXX     ion/src/device/shared/drivers/serial_number.o
-CXX     ion/src/device/shared/drivers/swd.o
-CXX     ion/src/device/shared/drivers/timing.o
-CXX     ion/src/device/shared/drivers/usb.o
-CXX     ion/src/device/shared/drivers/wakeup.o
-CXX     ion/src/device/shared/events.o
-CXX     ion/src/device/shared/stack.o
-CC      ion/src/external/lz4/lz4.o
-CXX     ion/src/shared/collect_registers.o
-CXX     ion/src/shared/console_line.o
-CXX     ion/src/shared/crc32_eat_byte.o
-CXX     ion/src/shared/decompress.o
-CXX     ion/src/shared/events.o
-CXX     ion/src/shared/events_keyboard.o
-CXX     ion/src/shared/events_modifier.o
-CXX     ion/src/shared/internal_storage.o
-CXX     ion/src/shared/keyboard/layout_B3/layout_events.o
-CXX     ion/src/shared/rtc.o
-CXX     ion/src/shared/stack_position.o
-CXX     ion/src/shared/storage.o
-CXX     ion/src/shared/unicode/utf8_decoder.o
-ion/src/shared/internal_storage.cpp: In member function 'int Ion::InternalStorage::numberOfRecords()':
-ion/src/shared/internal_storage.cpp:231:18: warning: unused variable 'name' [-Wunused-variable]
-  231 |     const char * name = fullNameOfRecordStarting(p);
-      |                  ^~~~
-CXX     ion/src/shared/unicode/utf8_helper.o
-CXX     kandinsky/src/color.o
-CXX     kandinsky/src/context.o
-CXX     kandinsky/src/context_circle.o
-CXX     kandinsky/src/context_line.o
-CXX     kandinsky/src/context_pixel.o
-CXX     kandinsky/src/context_polygon.o
-CXX     kandinsky/src/context_rect.o
-CXX     kandinsky/src/context_text.o
-CXX     kandinsky/src/font.o
-CXX     kandinsky/src/framebuffer.o
-CXX     kandinsky/src/framebuffer_context.o
-CXX     kandinsky/src/ion_context.o
-CXX     kandinsky/src/point.o
-CXX     kandinsky/src/postprocess_context.o
-CXX     kandinsky/src/postprocess_gamma_context.o
-CXX     kandinsky/src/postprocess_invert_context.o
-CXX     kandinsky/src/postprocess_zoom_context.o
-CXX     kandinsky/src/rect.o
-CC      liba/src/abs.o
-CC      liba/src/aeabi-rt/atexit.o
-AS      liba/src/armv7m/longjmp.o
-AS      liba/src/armv7m/setjmp.o
-CC      liba/src/assert.o
-CC      liba/src/bzero.o
-CC      liba/src/ctype.o
-CC      liba/src/errno.o
-CC      liba/src/external/openbsd/b_exp__D.o
-CC      liba/src/external/openbsd/b_log__D.o
-CC      liba/src/external/openbsd/b_tgamma.o
-CC      liba/src/external/openbsd/e_acos.o
-CC      liba/src/external/openbsd/e_acosf.o
-CC      liba/src/external/openbsd/e_acosh.o
-CC      liba/src/external/openbsd/e_acoshf.o
-CC      liba/src/external/openbsd/e_asin.o
-CC      liba/src/external/openbsd/e_asinf.o
-CC      liba/src/external/openbsd/e_atan2.o
-CC      liba/src/external/openbsd/e_atan2f.o
-CC      liba/src/external/openbsd/e_atanh.o
-CC      liba/src/external/openbsd/e_atanhf.o
-CC      liba/src/external/openbsd/e_cosh.o
-CC      liba/src/external/openbsd/e_coshf.o
-CC      liba/src/external/openbsd/e_exp.o
-CC      liba/src/external/openbsd/e_expf.o
-CC      liba/src/external/openbsd/e_fmod.o
-CC      liba/src/external/openbsd/e_fmodf.o
-CC      liba/src/external/openbsd/e_hypot.o
-CC      liba/src/external/openbsd/e_hypotf.o
-CC      liba/src/external/openbsd/e_lgamma_r.o
-CC      liba/src/external/openbsd/e_lgammaf_r.o
-CC      liba/src/external/openbsd/e_log.o
-CC      liba/src/external/openbsd/e_log10.o
-CC      liba/src/external/openbsd/e_log10f.o
-CC      liba/src/external/openbsd/e_log2.o
-CC      liba/src/external/openbsd/e_logf.o
-CC      liba/src/external/openbsd/e_pow.o
-CC      liba/src/external/openbsd/e_powf.o
-CC      liba/src/external/openbsd/e_rem_pio2.o
-CC      liba/src/external/openbsd/e_rem_pio2f.o
-CC      liba/src/external/openbsd/e_scalb.o
-CC      liba/src/external/openbsd/e_sinh.o
-CC      liba/src/external/openbsd/e_sinhf.o
-CC      liba/src/external/openbsd/e_sqrtf.o
-CC      liba/src/external/openbsd/e_sqrt.o
-CC      liba/src/external/openbsd/k_cos.o
-CC      liba/src/external/openbsd/k_rem_pio2.o
-CC      liba/src/external/openbsd/k_rem_pio2f.o
-CC      liba/src/external/openbsd/k_cosf.o
-CC      liba/src/external/openbsd/k_sin.o
-CC      liba/src/external/openbsd/k_sinf.o
-CC      liba/src/external/openbsd/k_tan.o
-CC      liba/src/external/openbsd/k_tanf.o
-CC      liba/src/external/openbsd/s_asinh.o
-CC      liba/src/external/openbsd/s_asinhf.o
-CC      liba/src/external/openbsd/s_atan.o
-CC      liba/src/external/openbsd/s_atanf.o
-CC      liba/src/external/openbsd/s_ceil.o
-CC      liba/src/external/openbsd/s_ceilf.o
-CC      liba/src/external/openbsd/s_copysignf.o
-CC      liba/src/external/openbsd/s_copysign.o
-CC      liba/src/external/openbsd/s_cos.o
-CC      liba/src/external/openbsd/s_cosf.o
-CC      liba/src/external/openbsd/s_erf.o
-CC      liba/src/external/openbsd/s_erff.o
-CC      liba/src/external/openbsd/s_expm1.o
-CC      liba/src/external/openbsd/s_expm1f.o
-CC      liba/src/external/openbsd/s_fabs.o
-CC      liba/src/external/openbsd/s_fabsf.o
-CC      liba/src/external/openbsd/s_floor.o
-CC      liba/src/external/openbsd/s_floorf.o
-CC      liba/src/external/openbsd/s_fmax.o
-CC      liba/src/external/openbsd/s_fmaxf.o
-CC      liba/src/external/openbsd/s_frexp.o
-CC      liba/src/external/openbsd/s_frexpf.o
-CC      liba/src/external/openbsd/s_log1p.o
-CC      liba/src/external/openbsd/s_log1pf.o
-CC      liba/src/external/openbsd/s_logb.o
-CC      liba/src/external/openbsd/s_logbf.o
-CC      liba/src/external/openbsd/s_modf.o
-CC      liba/src/external/openbsd/s_modff.o
-CC      liba/src/external/openbsd/s_nextafter.o
-CC      liba/src/external/openbsd/s_nextafterf.o
-CC      liba/src/external/openbsd/s_round.o
-CC      liba/src/external/openbsd/s_rint.o
-CC      liba/src/external/openbsd/s_roundf.o
-CC      liba/src/external/openbsd/s_scalbn.o
-CC      liba/src/external/openbsd/s_scalbnf.o
-CC      liba/src/external/openbsd/s_signgam.o
-CC      liba/src/external/openbsd/s_sin.o
-CC      liba/src/external/openbsd/s_sinf.o
-CC      liba/src/external/openbsd/s_tan.o
-CC      liba/src/external/openbsd/s_tanf.o
-CC      liba/src/external/openbsd/s_tanh.o
-CC      liba/src/external/openbsd/s_tanhf.o
-CC      liba/src/external/openbsd/s_trunc.o
-CC      liba/src/external/openbsd/s_truncf.o
-CC      liba/src/external/openbsd/w_lgamma.o
-CC      liba/src/external/openbsd/w_lgammaf.o
-CC      liba/src/external/sqlite/mem5.o
-CC      liba/src/fpclassify.o
-CC      liba/src/fpclassifyf.o
-CC      liba/src/ieee754.o
-CC      liba/src/itoa.o
-CC      liba/src/malloc.o
-CC      liba/src/memcmp.o
-CC      liba/src/memcpy.o
-CC      liba/src/memmove.o
-CC      liba/src/memset.o
-CC      liba/src/nearbyint.o
-CC      liba/src/nearbyintf.o
-CC      liba/src/strchr.o
-CC      liba/src/strcmp.o
-CC      liba/src/strlcat.o
-CC      liba/src/strlcpy.o
-CC      liba/src/strlen.o
-CXX     libaxx/include/external/libcxx/complex.o
-CXX     libaxx/src/cxxabi/atexit.o
-CXX     libaxx/src/cxxabi/pure_virtual.o
-CXX     libaxx/src/new.o
-INLINER bootloader/computer.cpp
-RASTER  kandinsky/fonts/LargeFontSimple.cpp
-RASTER  kandinsky/fonts/SmallFontSimple.cpp
-CXX     bootloader/computer.o
-CXX     kandinsky/fonts/LargeFontSimple.o
-CXX     kandinsky/fonts/SmallFontSimple.o
-CXX     bootloader/interface/static/interface.o
 LD      bootloader.elf
-/usr/lib/gcc/arm-none-eabi/14.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0110/bootloader.elf has a LOAD segment with RWX permissions
+/usr/lib/gcc/arm-none-eabi/13.2.0/../../../../arm-none-eabi/bin/ld: warning: output/release/device/n0110/bootloader.elf has a LOAD segment with RWX permissions
 OBJCOPY bootloader.bin

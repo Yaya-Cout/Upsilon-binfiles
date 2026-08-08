@@ -15,6 +15,7 @@ themes=(
     "omega_freenumworks"
     #"yellowmega_light"
     #"yellowmega_dark"
+    "catppuccin-mocha"
     "upsilon_dark"
     "epsilon_dark"
     "epsilon_light"
@@ -35,6 +36,7 @@ repos=(
     "https://github.com/PierreDiab/Omega-FreeNumworks"
     #"https://github.com/Laporte12974/Yellowmega_Theme"
     #"https://github.com/Laporte12974/Yellowmega_Theme"
+    "https://github.com/yannis300307/Upsilon-Catppuccin"
     "https://github.com/lemoustachu/Upsilon-Themes"
 )
 

@@ -59,18 +59,18 @@ for i in "${!themes[@]}"
 do
     echo Compiling for n110 $i out of ${#themes[@]}
     make cleanall &> /dev/null
-    echo Compilation start: $(date) > binpacks/n110/${themes[$i]}.legacy.log
-    make -j8 THEME_NAME=${themes[i]} $([ "${repos[i]}" == "" ] && echo || echo "THEME_REPO=${repos[i]}") binpack MODEL=n0110 &>> binpacks/n110/${themes[i]}.legacy.log
-    echo Compilation end: $(date) >> binpacks/n110/${themes[$i]}.legacy.log
+    echo "Compilation start: $(date)" > binpacks/n110/${themes[$i]}.legacy.log
+    make -j8 THEME_NAME=${themes[i]} "$([ "${repos[i]}" == "" ] && echo || echo "THEME_REPO=${repos[i]}")" binpack MODEL=n0110 &>> binpacks/n110/${themes[i]}.legacy.log
+    echo "Compilation end: $(date)" >> binpacks/n110/${themes[$i]}.legacy.log
 
-    echo Compilation start: $(date) > binpacks/n110/${themes[$i]}.bl.log
-    make -j8 THEME_NAME=${themes[i]} $([ "${repos[i]}" == "" ] && echo || echo "THEME_REPO=${repos[i]}") &>> binpacks/n110/${themes[i]}.bl.log
-    echo Compilation start: $(date) >> binpacks/n110/${themes[$i]}.bl.log
+    echo "Compilation start: $(date)" > binpacks/n110/${themes[$i]}.bl.log
+    make -j8 THEME_NAME=${themes[i]} "$([ "${repos[i]}" == "" ] && echo || echo "THEME_REPO=${repos[i]}")" &>> binpacks/n110/${themes[i]}.bl.log
+    echo "Compilation start: $(date)" >> binpacks/n110/${themes[$i]}.bl.log
 
     mv output/release/device/bootloader/epsilon.onboarding.A.bin binpacks/n110/epsilon.onboarding.${themes[$i]}.A.bin
     mv output/release/device/bootloader/epsilon.onboarding.B.bin binpacks/n110/epsilon.onboarding.${themes[$i]}.B.bin
 
-    mv output/release/device/n0110/binpack-n0110-$(git rev-parse HEAD | head -c 7).tgz binpacks/n110/${themes[$i]}.tgz
+    mv "output/release/device/n0110/binpack-n0110-$(git rev-parse HEAD | head -c 7).tgz" binpacks/n110/${themes[$i]}.tgz
 
     mv output/release/device/n0110/binpack/epsilon.onboarding.external.bin binpacks/n110/epsilon.onboarding.${themes[i]}.external.bin
     mv output/release/device/n0110/binpack/epsilon.onboarding.internal.bin binpacks/n110/epsilon.onboarding.${themes[i]}.internal.bin
